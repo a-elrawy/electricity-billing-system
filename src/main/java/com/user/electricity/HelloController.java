@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -31,6 +32,8 @@ public class HelloController {
     private TextField meterCode;
     @FXML
     private TextField path;
+    @FXML
+    private Label wrongCombination;
 
     public void submit(ActionEvent event) throws IOException {
         Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),meterCode.getText(),path.getText());
@@ -49,7 +52,8 @@ public class HelloController {
         if(login)
             System.out.println("Logged In");
         else
-            System.out.println("Wrong Combination");
+            wrongCombination.setText("Wrong Username/password");
+
     }
         public void switchToLogin(ActionEvent event) throws IOException {
         root= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));

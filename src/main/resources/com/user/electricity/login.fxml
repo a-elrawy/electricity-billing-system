@@ -38,5 +38,6 @@
             <Image url="@img/1639673751285.png" />
          </image>
       </ImageView>
+      <Label fx:id="wrongCombination" layoutX="291.0" layoutY="281.0" prefHeight="24.0" prefWidth="232.0" textFill="#eb0202" />
    </children>
 </AnchorPane>
