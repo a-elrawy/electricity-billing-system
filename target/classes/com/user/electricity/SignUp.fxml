@@ -15,24 +15,24 @@
                 <Image url="@img/white%20shadow.png" />
             </image>
         </ImageView>
-        <TextField layoutX="295.0" layoutY="82.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
+        <TextField fx:id="username" layoutX="295.0" layoutY="82.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
         <Label layoutX="283.0" layoutY="56.0" text="Username" />
-        <Button layoutX="331.0" layoutY="349.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="134.0" text="SignUp" />
+        <Button layoutX="331.0" layoutY="349.0" mnemonicParsing="false" onAction="#submit" prefHeight="26.0" prefWidth="134.0" text="SignUp" />
         <ImageView fitHeight="404.0" fitWidth="313.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@img/558201-electricity-picture-hd.jpg" />
             </image>
         </ImageView>
-      <TextField layoutX="296.0" layoutY="127.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
+      <TextField fx:id="email" layoutX="296.0" layoutY="127.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
       <Label layoutX="284.0" layoutY="101.0" text="Email Address" />
       <Label layoutX="284.0" layoutY="148.0" text="Password" />
-      <TextField layoutX="295.0" layoutY="219.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
+      <TextField fx:id="address" layoutX="295.0" layoutY="219.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
       <Label layoutX="283.0" layoutY="193.0" text="Address" />
-      <TextField layoutX="295.0" layoutY="266.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
+      <TextField fx:id="meterCode" layoutX="295.0" layoutY="266.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
       <Label layoutX="283.0" layoutY="240.0" text="Meter Code" />
-      <TextField layoutX="296.0" layoutY="312.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="107.0" />
+      <TextField fx:id="path" layoutX="296.0" layoutY="312.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="107.0" />
       <Label layoutX="284.0" layoutY="286.0" text="Upload a copy from your contract " />
-      <PasswordField layoutX="298.0" layoutY="166.0" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
+      <PasswordField fx:id="password" layoutX="298.0" layoutY="166.0" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
       <Button layoutX="437.0" layoutY="308.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="74.0" text="Upload" />
       <ImageView fitHeight="96.0" fitWidth="134.0" layoutX="426.0" layoutY="-14.0">
          <image>
