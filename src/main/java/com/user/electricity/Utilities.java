@@ -22,31 +22,9 @@ public class Utilities {
             file.createNewFile();
             Files.write(Paths.get(filename), (object.toString()+ System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
         }
-
     }
-    public static ArrayList<Customer> read_customers() throws IOException, ClassNotFoundException {
-        File file = new File(Utilities.CustomersFilename);
-        Scanner scanner = new Scanner(file);
-        ArrayList<Customer> customers = new ArrayList<Customer>();
-
-        while (scanner.hasNextLine()){
-            String line = scanner.nextLine();
-            String[] items = line.split("\\|");
-            int id = Integer.parseInt(items[0]);
-            Customer customer = new Customer(id,items[1],items[2],items[3],items[4],items[5],items[6]);
-            customers.add(customer);
-        }
-        return customers;
-    }
-    public static void printAllCustomers() throws IOException, ClassNotFoundException {
-        File file = new File(Utilities.CustomersFilename);
-        ArrayList<Customer> customers =  Utilities.read_customers();
-        for(Customer c:customers){
-            System.out.println(c.toString());
-        }
-    }
-    public static int getNumberOfCustomers(){
-        File file = new File(Utilities.CustomersFilename);
+    public static int getNumberOfObjects(String filename){
+        File file = new File(filename);
         int count = 0;
         try {
             Scanner sc = new Scanner(file);
@@ -60,4 +38,17 @@ public class Utilities {
         }
         return count;
     }
+
+    public static boolean validate_login (Person person) throws IOException, ClassNotFoundException {
+        boolean login = false;
+        ArrayList<Person> people = Person.read_people(Utilities.CustomersFilename);
+        for (Person c:  people) {
+            if (c.getUsername().equals(person.getUsername()) && c.getPassword().equals(person.getPassword()))
+                login = true;
+        }
+        return login;
+    }
+
+
+
 }

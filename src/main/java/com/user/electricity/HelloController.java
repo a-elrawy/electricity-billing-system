@@ -12,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -35,34 +37,41 @@ public class HelloController {
     @FXML
     private Label wrongCombination;
 
+
+    // Sign UP
     public void submit(ActionEvent event) throws IOException {
         Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),meterCode.getText(),path.getText());
         Utilities.write(customer,   Utilities.CustomersFilename);
         switchToLogin(event);
     }
 
+    // Login and Validation
     public void login(ActionEvent event) throws IOException, ClassNotFoundException {
         boolean login = false;
-        Customer customer = new Customer(username.getText(),password.getText());
-        ArrayList<Customer> customers = Utilities.read_customers();
-        for (Customer c:  customers) {
-            if (c.getUsername().equals(customer.getUsername()) && c.getPassword().equals(customer.getPassword()))
-                login = true;
+        Person person = new Person(username.getText(),password.getText());
+            // Customers
+            if(!Files.exists(Path.of(Utilities.CustomersFilename)))
+                wrongCombination.setText("There must be Customers");
+            if(Utilities.validate_login(person)) {
+                // To be Implemented
+                System.out.println("Logged In");
+            }
+            else
+                wrongCombination.setText("Wrong Username/password");
         }
-        if(login)
-            System.out.println("Logged In");
-        else
-            wrongCombination.setText("Wrong Username/password");
 
-    }
-        public void switchToLogin(ActionEvent event) throws IOException {
+
+
+    // Switching
+    public void switchToLogin(ActionEvent event) throws IOException {
         root= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
         stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("css/app.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
-    }
+        }
+
     public void switchToSignup(ActionEvent event) throws IOException {
         root= FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SignUp.fxml")));
         stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
