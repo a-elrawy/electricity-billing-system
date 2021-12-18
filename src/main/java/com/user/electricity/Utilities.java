@@ -39,9 +39,9 @@ public class Utilities {
         return count;
     }
 
-    public static boolean validate_login (Person person) throws IOException, ClassNotFoundException {
+    public static boolean validate_login (Person person, String filename) throws IOException, ClassNotFoundException {
         boolean login = false;
-        ArrayList<Person> people = Person.read_people(Utilities.CustomersFilename);
+        ArrayList<Person> people = Person.read_people(filename);
         for (Person c:  people) {
             if (c.getUsername().equals(person.getUsername()) && c.getPassword().equals(person.getPassword()))
                 login = true;

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Registration extends Application {
     @Override
     public void start(Stage stage) throws IOException, ClassNotFoundException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Registration.class.getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Registration.class.getResource("first.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("css/app.css").toExternalForm());
         stage.setTitle("Electricity Billing System");

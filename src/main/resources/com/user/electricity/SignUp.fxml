@@ -10,36 +10,36 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.HelloController">
     <children>
-        <ImageView fitHeight="400.0" fitWidth="320.0" layoutX="230.0" layoutY="1.0" pickOnBounds="true">
+        <ImageView fitHeight="508.0" fitWidth="542.0" layoutX="258.0" layoutY="1.0" pickOnBounds="true">
             <image>
                 <Image url="@img/white%20shadow.png" />
             </image>
         </ImageView>
-        <TextField fx:id="username" layoutX="295.0" layoutY="82.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
-        <Label layoutX="283.0" layoutY="56.0" text="Username" />
-        <Button layoutX="331.0" layoutY="349.0" mnemonicParsing="false" onAction="#submit" prefHeight="26.0" prefWidth="134.0" text="SignUp" />
-        <ImageView fitHeight="404.0" fitWidth="313.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+        <TextField fx:id="username" layoutX="364.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" prefWidth="216.0" />
+        <Label layoutX="352.0" layoutY="65.0" text="Username" />
+        <Button layoutX="394.0" layoutY="434.0" mnemonicParsing="false" onAction="#signup" prefHeight="26.0" prefWidth="134.0" text="SignUp" />
+        <ImageView fitHeight="535.0" fitWidth="341.0" layoutX="-14.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@img/558201-electricity-picture-hd.jpg" />
             </image>
         </ImageView>
-      <TextField fx:id="email" layoutX="296.0" layoutY="127.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
-      <Label layoutX="284.0" layoutY="101.0" text="Email Address" />
-      <Label layoutX="284.0" layoutY="148.0" text="Password" />
-      <TextField fx:id="address" layoutX="295.0" layoutY="219.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
-      <Label layoutX="283.0" layoutY="193.0" text="Address" />
-      <TextField fx:id="meterCode" layoutX="295.0" layoutY="266.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
-      <Label layoutX="283.0" layoutY="240.0" text="Meter Code" />
-      <TextField fx:id="path" layoutX="296.0" layoutY="312.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="107.0" />
-      <Label layoutX="284.0" layoutY="286.0" text="Upload a copy from your contract " />
-      <PasswordField fx:id="password" layoutX="298.0" layoutY="166.0" minHeight="-Infinity" prefHeight="18.0" prefWidth="216.0" />
-      <Button layoutX="437.0" layoutY="308.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="74.0" text="Upload" />
-      <ImageView fitHeight="96.0" fitWidth="134.0" layoutX="426.0" layoutY="-14.0">
+      <TextField fx:id="email" layoutX="363.0" layoutY="148.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="216.0" />
+      <Label layoutX="353.0" layoutY="125.0" text="Email Address" />
+      <Label layoutX="353.0" layoutY="184.0" text="Password" />
+      <TextField fx:id="address" layoutX="364.0" layoutY="268.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="216.0" />
+      <Label layoutX="352.0" layoutY="245.0" text="Address" />
+      <TextField fx:id="meterCode" layoutX="365.0" layoutY="328.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" prefWidth="216.0" />
+      <Label layoutX="352.0" layoutY="304.0" text="Meter Code" />
+      <TextField fx:id="path" layoutX="381.0" layoutY="394.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="107.0" />
+      <Label layoutX="354.0" layoutY="364.0" text="Upload a copy from your contract " />
+      <PasswordField fx:id="password" layoutX="364.0" layoutY="206.0" minHeight="-Infinity" prefHeight="26.0" prefWidth="216.0" />
+      <Button layoutX="509.0" layoutY="391.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="74.0" text="Upload" />
+      <ImageView fitHeight="96.0" fitWidth="134.0" layoutX="473.0" layoutY="-14.0">
          <image>
             <Image url="@img/1639677657202.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="108.0" fitWidth="107.0" layoutX="397.0" layoutY="-20.0">
+      <ImageView fitHeight="108.0" fitWidth="107.0" layoutX="444.0" layoutY="-20.0">
          <image>
             <Image url="@img/24949-1-sign-up-button-transparent-image-thumb.png" />
          </image>
