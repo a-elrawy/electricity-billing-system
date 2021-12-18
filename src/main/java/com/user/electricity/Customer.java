@@ -15,7 +15,7 @@ public class Customer extends Person {
         super(username,password);
     }
     public Customer(String username, String email , String password, String address, String meterCode, String pathToContract) {
-        super(Utilities.getNumberOfObjects(Utilities.CustomersFilename),username,password,email);
+        super(Utilities.getNumberOfObjects(Utilities.CustomersFilename),username,email,password);
         this.address = address;
         this.meterCode = meterCode;
         this.pathToContract = pathToContract;
