@@ -8,11 +8,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.UserController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="320.0" layoutX="230.0" layoutY="1.0" pickOnBounds="true">
          <image>
-            <Image url="@img/white%20shadow.png" />
+            <Image url="@img/whiteShadow.png" />
          </image>
       </ImageView>
       <TextField fx:id="username" layoutX="340.0" layoutY="112.0" prefWidth="182.0" />

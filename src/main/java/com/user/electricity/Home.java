@@ -7,12 +7,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class Registration extends Application {
+public class Home extends Application {
     @Override
     public void start(Stage stage) throws IOException, ClassNotFoundException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Registration.class.getResource("first.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("first.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("css/app.css").toExternalForm());
         stage.setTitle("Electricity Billing System");
