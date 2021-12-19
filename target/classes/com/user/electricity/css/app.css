@@ -12,6 +12,13 @@ Button {
     -fx-width: 100%;
     -fx-opacity: 0.9;
 }
+ChoiceBox {
+    -fx-background-color: #fff;
+    -fx-border-color: black;
+    -fx-color: #fff;
+
+
+}
 @font-face {
     font-family: Berlin;
     stc: url('com/user/electricity/fonts/Berlin Sans FB Regular.ttf')
