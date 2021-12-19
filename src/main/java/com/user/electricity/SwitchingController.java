@@ -61,4 +61,5 @@ public class SwitchingController {
         stage.setScene(scene);
         stage.show();
     }
+
 }

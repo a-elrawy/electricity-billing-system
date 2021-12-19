@@ -6,13 +6,16 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Utilities {
     static String CustomersFilename = "customers.txt";
     static String OperatorsFilename = "operators.txt";
     static String AdminFilename = "admin.txt";
-
+    public static String generateMeterCode(String region){
+        return  region.charAt(0)+ String.valueOf(getNumberOfObjects(CustomersFilename));
+    }
 
     public static void write(Object object, String filename ) throws IOException {
         try {

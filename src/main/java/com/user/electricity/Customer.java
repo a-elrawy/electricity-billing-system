@@ -8,22 +8,25 @@ import java.util.Scanner;
 
 public class Customer extends Person {
     private String address;
+    private String region;
     private String meterCode;
     private String pathToContract;
     private final static File file = new File(Utilities.CustomersFilename);
     public Customer(String username,String password){
         super(username,password);
     }
-    public Customer(String username, String email , String password, String address, String meterCode, String pathToContract) {
+    public Customer(String username, String email , String password, String address, String region, String meterCode, String pathToContract) {
         super(Utilities.getNumberOfObjects(Utilities.CustomersFilename),username,email,password);
         this.address = address;
+        this.region = region;
         this.meterCode = meterCode;
         this.pathToContract = pathToContract;
     }
 // For Reading Only
-    public Customer(int id, String username, String email , String password, String address, String meterCode, String pathToContract) {
+    public Customer(int id, String username, String email , String password, String address, String region, String meterCode, String pathToContract) {
         super(id, username, email, password);
         this.address = address;
+        this.region = region;
         this.meterCode = meterCode;
         this.pathToContract = pathToContract;
     }
@@ -43,7 +46,7 @@ public class Customer extends Person {
     }
     @Override
     public String toString() {
-        return "" + id +"|"+ username + "|" + email+ "|"+ password+ "|" + address+ "|" + meterCode+ "|" + pathToContract;
+        return "" + id +"|"+ username + "|" + email+ "|"+ password+ "|" + address+ "|" + region + "|" +  meterCode+ "|" + pathToContract;
     }
 
     // To ve Generalized
@@ -54,10 +57,18 @@ public class Customer extends Person {
             String line = scanner.nextLine();
             String[] items = line.split("\\|");
             int id = Integer.parseInt(items[0]);
-            Customer customer = new Customer(id,items[1],items[2],items[3],items[4],items[5],items[6]);
+            Customer customer = new Customer(id,items[1],items[2],items[3],items[4],items[5],items[6],items[7]);
             customers.add(customer);
         }
         return customers;
+    }
+    public static Customer read_customer(String meterCode) throws IOException, ClassNotFoundException {
+        ArrayList<Customer> customers =  Customer.read_customers();
+        for(Customer c:customers){
+           if(c.getMeterCode().equals(meterCode))
+               return c;
+        }
+        return null;
     }
 
     public static void printAllCustomers() throws IOException, ClassNotFoundException {
@@ -65,5 +76,9 @@ public class Customer extends Person {
         for(Customer c:customers){
             System.out.println(c.toString());
         }
+    }
+
+    public String getRegion() {
+        return region;
     }
 }

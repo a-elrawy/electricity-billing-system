@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -10,12 +11,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.UserController">
     <children>
-        <ImageView fitHeight="508.0" fitWidth="542.0" layoutX="258.0" layoutY="1.0" pickOnBounds="true">
+        <ImageView fitHeight="508.0" fitWidth="542.0" layoutX="258.0" layoutY="1.0" onMouseClicked="#initializeG" pickOnBounds="true">
             <image>
                 <Image url="@img/whiteShadow.png" />
             </image>
         </ImageView>
-        <TextField fx:id="username" layoutX="364.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" prefWidth="216.0" />
+        <TextField fx:id="username" layoutX="364.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" onKeyTyped="#initializeG" onMouseClicked="#initializeG" prefHeight="24.0" prefWidth="216.0" />
         <Label layoutX="352.0" layoutY="65.0" text="Username" />
         <Button layoutX="394.0" layoutY="434.0" mnemonicParsing="false" onAction="#signup" prefHeight="26.0" prefWidth="134.0" text="SignUp" />
         <ImageView fitHeight="535.0" fitWidth="341.0" layoutX="-14.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
@@ -28,12 +29,11 @@
       <Label layoutX="353.0" layoutY="184.0" text="Password" />
       <TextField fx:id="address" layoutX="364.0" layoutY="268.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="216.0" />
       <Label layoutX="352.0" layoutY="245.0" text="Address" />
-      <TextField fx:id="meterCode" layoutX="365.0" layoutY="328.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" prefWidth="216.0" />
-      <Label layoutX="352.0" layoutY="304.0" text="Meter Code" />
-      <TextField fx:id="path" layoutX="381.0" layoutY="394.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="18.0" prefWidth="107.0" />
+      <Label layoutX="352.0" layoutY="304.0" text="Government" />
+      <TextField fx:id="path" layoutX="364.0" layoutY="388.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" prefWidth="134.0" />
       <Label layoutX="354.0" layoutY="364.0" text="Upload a copy from your contract " />
       <PasswordField fx:id="password" layoutX="364.0" layoutY="206.0" minHeight="-Infinity" prefHeight="26.0" prefWidth="216.0" />
-      <Button layoutX="509.0" layoutY="391.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="74.0" text="Upload" />
+      <Button layoutX="511.0" layoutY="387.0" mnemonicParsing="false" onAction="#uploadChooser" prefHeight="16.0" prefWidth="67.0" text="Upload" />
       <ImageView fitHeight="96.0" fitWidth="134.0" layoutX="473.0" layoutY="-14.0">
          <image>
             <Image url="@img/1639677657202.png" />
@@ -44,5 +44,6 @@
             <Image url="@img/24949-1-sign-up-button-transparent-image-thumb.png" />
          </image>
       </ImageView>
+      <ChoiceBox fx:id="government" layoutX="364.0" layoutY="330.0" onMouseClicked="#initializeG" prefHeight="24.0" prefWidth="216.0" />
     </children>
 </AnchorPane>
