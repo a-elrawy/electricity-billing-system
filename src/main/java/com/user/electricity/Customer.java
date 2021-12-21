@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Customer extends Person {
@@ -33,6 +34,7 @@ public class Customer extends Person {
         this.meterCode = meterCode;
         this.pathToContract = pathToContract;
     }
+
 
 
 
@@ -94,7 +96,14 @@ public class Customer extends Person {
     public String getRegion() {
         return region;
     }
-
+    public static ArrayList<Customer> getCustomersByRegion(String region) throws IOException, ClassNotFoundException {
+        ArrayList<Customer> customers =  Customer.read_customers();
+        ArrayList<Customer> customers2 =  new ArrayList<>();
+        for (Customer c : customers)
+            if (Objects.equals(c.getRegion(), region))
+                customers2.add(c);
+        return customers2;
+    }
 
     public double getAmount() {
         return amount;
