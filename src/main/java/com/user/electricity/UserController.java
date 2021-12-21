@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class UserController {
@@ -48,8 +49,10 @@ public class UserController {
     // Sign UP
     public void signup(ActionEvent event) throws IOException {
         String region = government.getSelectionModel().getSelectedItem();
+        Utilities.readNumbers("count.txt");
         Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),region,
                 Utilities.generateMeterCode(region),path.getText());
+        Utilities.writeNumbers("count.txt");
         Utilities.write(customer,Utilities.CustomersFilename);
         SwitchingController.switchToLogin(event);
     }
@@ -61,7 +64,8 @@ public class UserController {
                 wrongCombination.setText("There must be Users");
             if(Utilities.validate_login(person, files[SwitchingController.index])) {
                 // To be Implemented
-                System.out.println("Logged In");
+                if(SwitchingController.index == 1)
+                    SwitchingController.switchToOperator(event);
             }
             else
                 wrongCombination.setText("Wrong Username/password");
@@ -71,7 +75,6 @@ public class UserController {
     // Switching Button Scene Builder
     public void switchToSignup(ActionEvent event) throws IOException {
         SwitchingController.switchToSignup(event);
-
     }
 
 

@@ -17,7 +17,7 @@ public class Home extends Application {
         stage.setTitle("Electricity Billing System");
         stage.setScene(scene);
         stage.show();
-
+        System.out.println(Utilities.UserCount);
     }
 
     public static void main(String[] args) {

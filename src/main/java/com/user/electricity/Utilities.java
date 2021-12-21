@@ -2,6 +2,7 @@ package com.user.electricity;
 
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -13,8 +14,9 @@ public class Utilities {
     static String CustomersFilename = "customers.txt";
     static String OperatorsFilename = "operators.txt";
     static String AdminFilename = "admin.txt";
+    static int UserCount =0;
     public static String generateMeterCode(String region){
-        return  region.charAt(0)+ String.valueOf(getNumberOfObjects(CustomersFilename));
+        return  region.charAt(0)+ String.valueOf(UserCount);
     }
 
     public static void write(Object object, String filename ) throws IOException {
@@ -41,7 +43,19 @@ public class Utilities {
         }
         return count;
     }
-
+    public static void readNumbers(String filename) throws IOException {
+        try {
+            Scanner scanner = new Scanner(new File(filename));
+            UserCount = scanner.nextInt();
+        } catch (Exception e) {
+            writeNumbers(filename);
+        }
+    }
+    public static void writeNumbers(String filename) throws IOException {
+        FileWriter file = new FileWriter(filename);
+        file.write(String.valueOf(UserCount));
+        file.close();
+    }
     public static boolean validate_login (Person person, String filename) throws IOException, ClassNotFoundException {
         boolean login = false;
         ArrayList<Person> people = Person.read_people(filename);

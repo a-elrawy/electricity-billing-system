@@ -35,7 +35,6 @@ public class SwitchingController {
         index=1;switchToLogin(event);
     }
 
-
     public static void switchToLogin(ActionEvent event) throws IOException {
         root= FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("login.fxml")));
         stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -54,6 +53,15 @@ public class SwitchingController {
 
     public static void switchToSignup(ActionEvent event) throws IOException {
         root= FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("SignUp.fxml")));
+        stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setWidth(625);stage.setHeight(525);
+        scene.getStylesheets().add(SwitchingController.class.getResource("css/app.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+    public static void switchToOperator(ActionEvent event) throws IOException {
+        root= FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("OperatorProfile.fxml")));
         stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setWidth(625);stage.setHeight(525);
