@@ -59,6 +59,7 @@ public class UserController {
     // Login and Validation
     public void login(ActionEvent event) throws IOException, ClassNotFoundException {
         Person person = new Person(username.getText(),password.getText());
+        System.out.println(SwitchingController.index);
             if(!Files.exists(Path.of(files[SwitchingController.index])))
                 wrongCombination.setText("There must be Users");
             if(Utilities.validate_login(person, files[SwitchingController.index])) {

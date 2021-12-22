@@ -10,14 +10,15 @@ import java.io.IOException;
 
 public class Home extends Application {
     @Override
-    public void start(Stage stage) throws IOException, ClassNotFoundException {
+    public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("first.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("css/app.css").toExternalForm());
         stage.setTitle("Electricity Billing System");
         stage.setScene(scene);
+
         stage.show();
-        System.out.println(Utilities.UserCount);
+        System.out.println(stage.getWidth() + " " +stage.getHeight());
     }
 
     public static void main(String[] args) {

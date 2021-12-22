@@ -85,6 +85,7 @@ public class SwitchingController {
         root = FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("regions.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        stage.setWidth(752);stage.setHeight(579);
         stage.setScene(scene);
         stage.show();
     }
@@ -92,6 +93,7 @@ public class SwitchingController {
         root = FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("statistics.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        stage.setWidth(752);stage.setHeight(579);
         stage.setScene(scene);
         stage.show();
     }
