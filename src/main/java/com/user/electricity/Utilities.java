@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Utilities {
     static String CustomersFilename = "customers.txt";
     static String OperatorsFilename = "operators.txt";
-    static String AdminFilename = "admin.txt";
+    static String AdminFilename = "admins.txt";
     static int UserCount =0;
     public static String generateMeterCode(String region){
         return  region.charAt(0)+ String.valueOf(UserCount);
@@ -47,6 +47,9 @@ public class Utilities {
         try {
             Scanner scanner = new Scanner(new File(filename));
             UserCount = scanner.nextInt();
+            FileWriter file = new FileWriter(filename);
+            file.write(String.valueOf(UserCount++));
+            file.close();
         } catch (Exception e) {
             writeNumbers(filename);
         }

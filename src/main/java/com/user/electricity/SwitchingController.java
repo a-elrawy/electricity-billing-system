@@ -81,5 +81,19 @@ public class SwitchingController {
         stage.setScene(scene);
         stage.show();
     }
+    public static void switchToRegions(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("regions.fxml")));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public static void switchToAllStatistics(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("statistics.fxml")));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }

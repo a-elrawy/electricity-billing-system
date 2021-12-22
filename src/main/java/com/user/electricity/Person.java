@@ -10,8 +10,9 @@ public class Person {
     protected String username;
     protected String email;
     protected String password;
-    public Person(int id, String username, String email, String password) {
-        this.id = id;
+    public Person( String username, String email, String password) throws IOException {
+        Utilities.readNumbers("count.txt");
+        this.id = Utilities.UserCount;
         this.username = username;
         this.email = email;
         this.password = password;
@@ -19,6 +20,13 @@ public class Person {
 
     public Person(String username, String password) {
         this.username = username;
+        this.password = password;
+    }
+
+    public Person(int id, String username, String email, String password) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
         this.password = password;
     }
 

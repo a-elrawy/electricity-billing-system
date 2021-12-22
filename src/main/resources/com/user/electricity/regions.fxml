@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.regionController">
+    <children>
+        <AnchorPane layoutX="-2.8421709430404007E-14" prefHeight="550.0" prefWidth="198.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="-0.39999999999997726" AnchorPane.leftAnchor="-2.8421709430404007E-14" AnchorPane.rightAnchor="551.6" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox layoutY="66.0" prefHeight="192.0" prefWidth="198.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="292.4" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.8421709430404007E-14" AnchorPane.topAnchor="66.0">
+                    <children>
+                  <Button mnemonicParsing="false" onAction="#switchToRegions" prefHeight="50.0" prefWidth="199.0" style="-fx-background-color: #000;" text="Bills" textFill="#fffefe">
+                     <font>
+                        <Font name="Berlin Sans FB" size="36.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="199.0" style="-fx-background-color: #000;" text="Modify" textFill="#fffefe">
+                     <font>
+                        <Font name="Berlin Sans FB" size="36.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                    </children>
+                </VBox>
+                <Label alignment="CENTER" layoutX="86.0" layoutY="495.0" prefHeight="47.0" prefWidth="105.0" text="Logout" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="8.199999999999974" AnchorPane.leftAnchor="86.0" AnchorPane.rightAnchor="6.799999999999983" AnchorPane.topAnchor="495.00000000000006">
+                    <font>
+                        <Font name="Berlin Sans FB" size="23.0" />
+                    </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+                </Label>
+            </children>
+        </AnchorPane>
+      <Button layoutX="587.0" layoutY="507.0" mnemonicParsing="false" onAction="#switchToAllStatistics" prefHeight="28.0" prefWidth="142.0" style="-fx-background-color: #000;" text="Show Statistics" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TabPane layoutX="198.0" prefHeight="505.0" prefWidth="550.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Region 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table1" prefHeight="477.0" prefWidth="550.0">
+                          <columns>
+                            <TableColumn fx:id="billC" prefWidth="75.0" text="Bill No." />
+                            <TableColumn fx:id="nameC" prefWidth="130.4000244140625" text="Name" />
+                              <TableColumn fx:id="addressC" prefWidth="128.79998779296875" text="Address" />
+                              <TableColumn fx:id="valueC" prefWidth="104.79998779296875" text="Value" />
+                              <TableColumn fx:id="comC" prefWidth="112.79998779296875" text="Comsupmtion" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Region 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutY="-1.0" prefHeight="477.0" prefWidth="550.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="Bill No." />
+                              <TableColumn prefWidth="131.20001220703125" text="Name" />
+                              <TableColumn prefWidth="132.79998779296875" text="Address" />
+                              <TableColumn prefWidth="100.0" text="Value" />
+                              <TableColumn prefWidth="113.5999755859375" text="Comsupmtion" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Region 3">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="477.0" prefWidth="550.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="Bill No." />
+                              <TableColumn prefWidth="75.0" text="Name" />
+                              <TableColumn prefWidth="75.0" text="Address" />
+                              <TableColumn prefWidth="75.0" text="Phone" />
+                              <TableColumn prefWidth="75.0" text="Value" />
+                              <TableColumn prefWidth="75.0" text="Comsupmtion" />
+                           </columns>
+                        </TableView>
+                        <TableView prefHeight="477.0" prefWidth="550.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="Bill No." />
+                              <TableColumn prefWidth="124.800048828125" text="Name" />
+                              <TableColumn prefWidth="150.39996337890625" text="Address" />
+                              <TableColumn prefWidth="99.20001220703125" text="Value" />
+                              <TableColumn prefWidth="101.59991455078125" text="Comsupmtion" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+    </children>
+</AnchorPane>

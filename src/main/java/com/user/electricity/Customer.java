@@ -19,8 +19,8 @@ public class Customer extends Person {
     public Customer(String username,String password){
         super(username,password);
     }
-    public Customer(String username, String email , String password, String address, String region, String meterCode, String pathToContract) {
-        super(Utilities.UserCount++,username,email,password);
+    public Customer(String username, String email , String password, String address, String region, String meterCode, String pathToContract) throws IOException {
+        super(username,email,password);
         this.address = address;
         this.region = region;
         this.meterCode = meterCode;

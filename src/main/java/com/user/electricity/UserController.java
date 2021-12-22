@@ -50,10 +50,8 @@ public class UserController {
     // Sign UP
     public void signup(ActionEvent event) throws IOException {
         String region = government.getSelectionModel().getSelectedItem();
-        Utilities.readNumbers("count.txt");
         Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),region,
                 Utilities.generateMeterCode(region),path.getText());
-        Utilities.writeNumbers("count.txt");
         Utilities.write(customer,Utilities.CustomersFilename);
         SwitchingController.switchToLogin(event);
     }
@@ -67,6 +65,9 @@ public class UserController {
                 // To be Implemented
                 if(SwitchingController.index == 1)
                     SwitchingController.switchToOperator(event);
+                else if(SwitchingController.index == 2){
+                    SwitchingController.switchToRegions(event);
+                }
             }
             else
                 wrongCombination.setText("Wrong Username/password");
