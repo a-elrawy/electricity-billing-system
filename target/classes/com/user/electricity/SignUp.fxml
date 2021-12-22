@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.UserController">
     <children>
@@ -18,7 +19,7 @@
         </ImageView>
         <TextField fx:id="username" layoutX="364.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" onKeyTyped="#initializeG" onMouseClicked="#initializeG" prefHeight="24.0" prefWidth="216.0" />
         <Label layoutX="352.0" layoutY="65.0" text="Username" />
-        <Button layoutX="394.0" layoutY="434.0" mnemonicParsing="false" onAction="#signup" prefHeight="26.0" prefWidth="134.0" text="SignUp" />
+        <Button layoutX="394.0" layoutY="434.0" mnemonicParsing="false" onAction="#signup" prefHeight="26.0" prefWidth="134.0" text="Submit" />
         <ImageView fitHeight="535.0" fitWidth="341.0" layoutX="-14.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@img/558201-electricity-picture-hd.jpg" />
@@ -34,16 +35,21 @@
       <Label layoutX="354.0" layoutY="364.0" text="Upload a copy from your contract " />
       <PasswordField fx:id="password" layoutX="364.0" layoutY="206.0" minHeight="-Infinity" prefHeight="26.0" prefWidth="216.0" />
       <Button layoutX="511.0" layoutY="387.0" mnemonicParsing="false" onAction="#uploadChooser" prefHeight="16.0" prefWidth="67.0" text="Upload" />
-      <ImageView fitHeight="96.0" fitWidth="134.0" layoutX="473.0" layoutY="-14.0">
+      <ImageView fx:id="sup1" fitHeight="96.0" fitWidth="134.0" layoutX="473.0" layoutY="-14.0">
          <image>
             <Image url="@img/1639677657202.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="108.0" fitWidth="107.0" layoutX="444.0" layoutY="-20.0">
+      <ImageView fx:id="sup" fitHeight="108.0" fitWidth="107.0" layoutX="444.0" layoutY="-20.0">
          <image>
             <Image url="@img/24949-1-sign-up-button-transparent-image-thumb.png" />
          </image>
       </ImageView>
       <ChoiceBox fx:id="government" layoutX="364.0" layoutY="330.0" onMouseClicked="#initializeG" prefHeight="24.0" prefWidth="216.0" />
+      <Label fx:id="supLabel" layoutX="372.0" layoutY="17.0" prefHeight="34.0" prefWidth="187.0" text="Add Customer">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

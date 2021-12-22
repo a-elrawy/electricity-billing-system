@@ -54,6 +54,7 @@ public class SwitchingController {
     public static void switchToSignup(ActionEvent event) throws IOException {
         root= FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("SignUp.fxml")));
         stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
+        Node node = root.lookup("#supLabel");node.setVisible(false);
         scene = new Scene(root);
         stage.setWidth(625);stage.setHeight(525);
         scene.getStylesheets().add(SwitchingController.class.getResource("css/app.css").toExternalForm());
@@ -62,6 +63,17 @@ public class SwitchingController {
     }
     public static void switchToOperator(ActionEvent event) throws IOException {
         root= FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("OperatorProfile.fxml")));
+        stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setWidth(625);stage.setHeight(525);
+        scene.getStylesheets().add(SwitchingController.class.getResource("css/app.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+    public static void switchToAdd(ActionEvent event) throws IOException {
+        root= FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("SignUp.fxml")));
+        Node node = root.lookup("#sup"); node.setVisible(false);
+        node = root.lookup("#sup1"); node.setVisible(false);
         stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setWidth(625);stage.setHeight(525);
