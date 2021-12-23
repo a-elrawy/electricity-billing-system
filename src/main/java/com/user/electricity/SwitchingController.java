@@ -34,65 +34,64 @@ public class SwitchingController {
     public void setOperator(ActionEvent event) throws IOException {
         index=1;switchToLogin(event);
     }
-
-    public static void switchToLogin(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("login.fxml")));
+    public static Scene getScene(ActionEvent event,String filename) throws IOException {
+        root= FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource(filename)));
         stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setHeight(437);stage.setWidth(600);
         scene = new Scene(root);
+        scene.getStylesheets().add(SwitchingController.class.getResource("css/app.css").toExternalForm());
+        return scene;
+    }
+
+    public static void switchToLogin(ActionEvent event) throws IOException {
+        scene = getScene(event,"login.fxml");
         if (index != 0){
             Node node = root.lookup("#sign");
             node.setVisible(false);
             node = root.lookup("#log");
             node.setLayoutX(390);
         }
-        scene.getStylesheets().add(SwitchingController.class.getResource("css/app.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
 
-    public static void switchToSignup(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("SignUp.fxml")));
-        stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
+    public  void switchToSignup(ActionEvent event) throws IOException {
+        scene = getScene(event,"SignUp.fxml");
         Node node = root.lookup("#supLabel");node.setVisible(false);
-        scene = new Scene(root);
         stage.setWidth(625);stage.setHeight(525);
         scene.getStylesheets().add(SwitchingController.class.getResource("css/app.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
-    public static void switchToOperator(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("OperatorProfile.fxml")));
-        stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+    public  void switchToOperator(ActionEvent event) throws IOException {
+        scene = getScene(event, "OperatorProfile.fxml");
         stage.setWidth(625);stage.setHeight(525);
-        scene.getStylesheets().add(SwitchingController.class.getResource("css/app.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
-    public static void switchToAdd(ActionEvent event) throws IOException {
-        root= FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("SignUp.fxml")));
+    public  void switchToModify(ActionEvent event) throws IOException {
+        scene = getScene(event,"CustomerModifications.fxml");
+        stage.setWidth(522);stage.setHeight(429);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+        public  void switchToAdd(ActionEvent event) throws IOException {
+        scene = getScene(event, "SignUp.fxml");
         Node node = root.lookup("#sup"); node.setVisible(false);
         node = root.lookup("#sup1"); node.setVisible(false);
-        stage  =(Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
         stage.setWidth(625);stage.setHeight(525);
-        scene.getStylesheets().add(SwitchingController.class.getResource("css/app.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
-    public static void switchToRegions(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("regions.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+    public  void switchToRegions(ActionEvent event) throws IOException{
+        scene = getScene(event,"regions.fxml");
         stage.setWidth(752);stage.setHeight(579);
         stage.setScene(scene);
         stage.show();
     }
-    public static void switchToAllStatistics(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(Objects.requireNonNull(SwitchingController.class.getResource("statistics.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+    public  void switchToAllStatistics(ActionEvent event) throws IOException{
+        scene = getScene(event, "statistics.fxml");
         stage.setWidth(752);stage.setHeight(579);
         stage.setScene(scene);
         stage.show();

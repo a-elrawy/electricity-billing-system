@@ -18,7 +18,6 @@ public class Home extends Application {
         stage.setScene(scene);
 
         stage.show();
-        System.out.println(stage.getWidth() + " " +stage.getHeight());
     }
 
     public static void main(String[] args) {

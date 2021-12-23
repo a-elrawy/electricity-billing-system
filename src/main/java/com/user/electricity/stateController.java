@@ -8,7 +8,7 @@ import javafx.scene.chart.XYChart;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class stateController extends AdminController implements Initializable  {
+public class stateController extends SwitchingController implements Initializable  {
     @FXML
     private BarChart<?, ?> bar;
 

@@ -11,7 +11,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.BillController">
    <children>
       <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
@@ -38,17 +37,17 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="310.0" layoutY="39.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="95.0" text="View Bills" />
+                        <Button layoutX="310.0" layoutY="39.0" mnemonicParsing="false" onAction="#initialize" prefHeight="26.0" prefWidth="95.0" text="View Bills" />
                         <TextField fx:id="RKeyField" layoutX="427.0" layoutY="40.0" />
                         <Label layoutX="427.0" layoutY="14.0" prefHeight="18.0" prefWidth="150.0" text="Region Key" />
-                        <TableView layoutX="21.0" layoutY="126.0" prefHeight="229.0" prefWidth="559.0">
+                        <TableView fx:id="table" layoutX="21.0" layoutY="126.0" prefHeight="229.0" prefWidth="559.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Name " />
-                            <TableColumn prefWidth="106.4000244140625" text="MeterCode" />
-                              <TableColumn prefWidth="76.79998779296875" text="Address" />
-                              <TableColumn prefWidth="131.199951171875" text="MonthlyReading" />
+                            <TableColumn fx:id="nameC" prefWidth="75.0" text="Name " />
+                            <TableColumn fx:id="billC" prefWidth="106.4000244140625" text="MeterCode" />
+                              <TableColumn fx:id="addressC" prefWidth="76.79998779296875" text="Address" />
+                              <TableColumn fx:id="comC" prefWidth="131.199951171875" text="MonthlyReading" />
                               <TableColumn prefWidth="62.4000244140625" text="Tax " />
-                              <TableColumn prefWidth="108.0" text="Charge" />
+                              <TableColumn fx:id="valueC" prefWidth="108.0" text="Charge" />
                           </columns>
                         </TableView>
                         <ImageView fitHeight="68.0" fitWidth="162.0" layoutX="51.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">

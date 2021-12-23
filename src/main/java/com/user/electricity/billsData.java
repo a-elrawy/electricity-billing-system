@@ -3,14 +3,14 @@ package com.user.electricity;
 public class billsData {
     private int billNo;
     private String name, address;
-    private double value, comsuption;
+    private double value, consumption;
 
-    public billsData (int billNo, String name, String address, double value, double comsuption) {
+    public billsData (int billNo, String name, String address, double value, double consumption) {
         this.billNo = billNo;
         this.name = name;
         this.address = address;
         this.value = value;
-        this.comsuption = comsuption;
+        this.consumption = consumption;
     }
 
     public void setName(String name) {
@@ -29,8 +29,8 @@ public class billsData {
         this.value = value;
     }
 
-    public void setComsuption(double comsuption) {
-        this.comsuption = comsuption;
+    public void setConsumption(double consumption) {
+        this.consumption = consumption;
     }
 
     public String getName() {
@@ -49,7 +49,7 @@ public class billsData {
         return value;
     }
 
-    public double getComsuption() {
-        return comsuption;
+    public double getConsumption() {
+        return consumption;
     }
 }

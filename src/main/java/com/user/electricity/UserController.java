@@ -18,7 +18,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class UserController {
+public class UserController extends SwitchingController {
     private final String[] files = {Utilities.CustomersFilename,Utilities.OperatorsFilename,Utilities.AdminFilename};
     ObservableList<String> governments = FXCollections.observableArrayList("Cairo","Giza","Alex","Sharm EL Sheikh");
     @FXML
@@ -53,7 +53,7 @@ public class UserController {
         Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),region,
                 Utilities.generateMeterCode(region),path.getText());
         Utilities.write(customer,Utilities.CustomersFilename);
-        SwitchingController.switchToLogin(event);
+        switchToLogin(event);
     }
 
     // Login and Validation
@@ -65,9 +65,9 @@ public class UserController {
             if(Utilities.validate_login(person, files[SwitchingController.index])) {
                 // To be Implemented
                 if(SwitchingController.index == 1)
-                    SwitchingController.switchToOperator(event);
+                    switchToOperator(event);
                 else if(SwitchingController.index == 2){
-                    SwitchingController.switchToRegions(event);
+                    switchToRegions(event);
                 }
             }
             else
@@ -76,10 +76,7 @@ public class UserController {
 
 
 
-    // Switching Button Scene Builder
-    public void switchToSignup(ActionEvent event) throws IOException {
-        SwitchingController.switchToAdd(event);
-    }
+
 
 
 }

@@ -56,4 +56,7 @@ public class Person {
         return people;
     }
 
+    public int getId() {
+        return id;
+    }
 }

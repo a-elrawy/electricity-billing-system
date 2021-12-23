@@ -29,7 +29,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="199.0" style="-fx-background-color: #000;" text="Modify" textFill="#fffefe">
+                  <Button mnemonicParsing="false" onAction="#switchToModify" prefHeight="50.0" prefWidth="199.0" style="-fx-background-color: #000;" text="Modify" textFill="#fffefe">
                      <font>
                         <Font name="Berlin Sans FB" size="36.0" />
                      </font>
@@ -61,7 +61,7 @@
          </cursor></Button>
       <TabPane layoutX="198.0" prefHeight="505.0" prefWidth="550.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Region 1">
+          <Tab text="Cairo">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -71,31 +71,31 @@
                             <TableColumn fx:id="nameC" prefWidth="130.4000244140625" text="Name" />
                               <TableColumn fx:id="addressC" prefWidth="128.79998779296875" text="Address" />
                               <TableColumn fx:id="valueC" prefWidth="104.79998779296875" text="Value" />
-                              <TableColumn fx:id="comC" prefWidth="112.79998779296875" text="Comsupmtion" />
+                              <TableColumn fx:id="comC" prefWidth="112.79998779296875" text="Consumption" />
                           </columns>
                         </TableView>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Region 2">
+          <Tab text="Giza">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutY="-1.0" prefHeight="477.0" prefWidth="550.0">
+                        <TableView fx:id="table2" layoutY="-1.0" prefHeight="477.0" prefWidth="550.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Bill No." />
-                              <TableColumn prefWidth="131.20001220703125" text="Name" />
-                              <TableColumn prefWidth="132.79998779296875" text="Address" />
-                              <TableColumn prefWidth="100.0" text="Value" />
-                              <TableColumn prefWidth="113.5999755859375" text="Comsupmtion" />
+                              <TableColumn fx:id="bill1" prefWidth="75.0" text="Bill No." />
+                              <TableColumn fx:id="name1" prefWidth="131.20001220703125" text="Name" />
+                              <TableColumn fx:id="address1" prefWidth="132.79998779296875" text="Address" />
+                              <TableColumn fx:id="value1" prefWidth="100.0" text="Value" />
+                              <TableColumn fx:id="com1" prefWidth="113.5999755859375" text="Consumption" />
                            </columns>
                         </TableView>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Region 3">
+            <Tab text="Alex">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -109,13 +109,13 @@
                               <TableColumn prefWidth="75.0" text="Comsupmtion" />
                            </columns>
                         </TableView>
-                        <TableView prefHeight="477.0" prefWidth="550.0">
+                        <TableView fx:id="table3" prefHeight="477.0" prefWidth="550.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Bill No." />
-                              <TableColumn prefWidth="124.800048828125" text="Name" />
-                              <TableColumn prefWidth="150.39996337890625" text="Address" />
-                              <TableColumn prefWidth="99.20001220703125" text="Value" />
-                              <TableColumn prefWidth="101.59991455078125" text="Comsupmtion" />
+                              <TableColumn fx:id="bill2" prefWidth="75.0" text="Bill No." />
+                              <TableColumn fx:id="name2" prefWidth="124.800048828125" text="Name" />
+                              <TableColumn fx:id="address2" prefWidth="150.39996337890625" text="Address" />
+                              <TableColumn fx:id="value2" prefWidth="99.20001220703125" text="Value" />
+                              <TableColumn fx:id="com2" prefWidth="101.59991455078125" text="Consumption" />
                            </columns>
                         </TableView>
                      </children>
