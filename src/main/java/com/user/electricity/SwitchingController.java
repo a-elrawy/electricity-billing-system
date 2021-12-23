@@ -96,5 +96,11 @@ public class SwitchingController {
         stage.setScene(scene);
         stage.show();
     }
+    public  void switchToUpdate(ActionEvent event) throws IOException{
+        scene = getScene(event, "updateCustomer.fxml");
+        stage.setWidth(622);stage.setHeight(440);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }

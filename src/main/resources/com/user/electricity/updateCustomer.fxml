@@ -8,12 +8,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.UpdateController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.UpdateController">
    <children>
       <AnchorPane prefHeight="407.0" prefWidth="222.0" style="-fx-background-color: #000000;">
          <children>
-            <Button layoutX="57.0" layoutY="101.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #000000;" text="Bills" textFill="WHITE">
+            <Button layoutX="57.0" layoutY="101.0" mnemonicParsing="false" onAction="#switchToBills" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #000000;" text="Bills" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB Bold" size="24.0" />
                </font>
@@ -21,7 +20,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="55.0" layoutY="201.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="114.0" style="-fx-background-color: #000000;" text="Modify" textFill="WHITE">
+            <Button layoutX="55.0" layoutY="201.0" mnemonicParsing="false" onAction="#switchToModify" prefHeight="49.0" prefWidth="114.0" style="-fx-background-color: #000000;" text="Modify" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB Bold" size="24.0" />
                </font>
@@ -61,7 +60,7 @@
          </font>
       </Text>
       <TextField fx:id="password" layoutX="381.0" layoutY="309.0" prefHeight="25.0" prefWidth="181.0" />
-      <Button layoutX="359.0" layoutY="361.0" mnemonicParsing="false" onAction="#submit" prefHeight="32.0" prefWidth="72.0" style="-fx-background-color: #000000;" text="Submit " textFill="WHITE">
+      <Button layoutX="359.0" layoutY="361.0" mnemonicParsing="false" onAction="#submit" prefHeight="32.0" prefWidth="80.0" style="-fx-background-color: #000000;" text="Submit " textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -70,7 +69,7 @@
          </cursor>
       </Button>
       <Label />
-      <Label fx:id="metercode" layoutX="386.0" layoutY="26.0" prefHeight="32.0" prefWidth="171.0" />
+      <Label fx:id="meterCodeLabel" layoutX="386.0" layoutY="26.0" prefHeight="32.0" prefWidth="171.0" />
       <Text layoutX="231.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meter code " wrappingWidth="129.13671875">
          <font>
             <Font size="18.0" />

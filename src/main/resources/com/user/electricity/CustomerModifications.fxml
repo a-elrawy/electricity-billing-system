@@ -48,7 +48,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="93.0" layoutY="283.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" style="-fx-background-color: #000000;" text="Update" textFill="WHITE">
+            <Button layoutX="93.0" layoutY="283.0" mnemonicParsing="false" onAction="#modify" prefHeight="32.0" prefWidth="80.0" style="-fx-background-color: #000000;" text="Update" textFill="WHITE">
                <font>
                   <Font name="Berlin Sans FB Bold" size="14.0" />
                </font>

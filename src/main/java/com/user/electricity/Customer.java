@@ -91,7 +91,21 @@ public class Customer extends Person {
         for (int i = 0; i < customers.size(); i++) {
             Files.write(Paths.get(Utilities.CustomersFilename), (customers.get(i).toString()+ System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
         }
-
+    }
+    public static void update_customer(Customer customer) throws IOException, ClassNotFoundException {
+        ArrayList<Customer> customers =  Customer.read_customers();
+        file.delete();
+        File file = new File(Utilities.CustomersFilename);
+        file.createNewFile();
+        for (int i = 0; i < customers.size(); i++) {
+            if (Objects.equals(customers.get(i).meterCode, customer.meterCode)) {
+                customers.remove(i);
+                customers.add(customer);
+            }
+        }
+        for (int i = 0; i < customers.size(); i++) {
+            Files.write(Paths.get(Utilities.CustomersFilename), (customers.get(i).toString()+ System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
+        }
     }
     public String getRegion() {
         return region;
