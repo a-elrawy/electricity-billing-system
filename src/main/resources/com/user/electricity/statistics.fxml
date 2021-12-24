@@ -40,6 +40,14 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                         </Button>
+                  <Button mnemonicParsing="false" onAction="#switchToComplaints" prefHeight="54.0" prefWidth="198.0" style="-fx-background-color: #000;" text="Complaints" textFill="WHITE">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                     </children>
                 </VBox>
                 <Label alignment="CENTER" layoutX="86.0" layoutY="495.0" prefHeight="47.0" prefWidth="105.0" text="Logout" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="8.199999999999974" AnchorPane.leftAnchor="86.0" AnchorPane.rightAnchor="6.799999999999983" AnchorPane.topAnchor="495.00000000000006">

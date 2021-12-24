@@ -40,13 +40,13 @@ public class UpdateController extends SwitchingController {
     public  void initialize() throws IOException, ClassNotFoundException {
         meterCodeLabel.setText(meterCode);
         Customer customer = Customer.read_customer(meterCode);
-        assert customer != null;
         id = customer.id;
         path = customer.getPathToContract();
         name.setText(customer.username);
         address.setText(customer.getAddress());
         email.setText(customer.getEmail());
         region.setText(customer.getRegion());
+
     }
 
 }
