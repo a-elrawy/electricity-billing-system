@@ -14,6 +14,7 @@ public class Utilities {
     static String CustomersFilename = "customers.txt";
     static String OperatorsFilename = "operators.txt";
     static String AdminFilename = "admins.txt";
+    static String ComplaintsFilename = "complaints.txt";
     static int UserCount =0;
     static int CurrentUserID;
     public static String generateMeterCode(String region){

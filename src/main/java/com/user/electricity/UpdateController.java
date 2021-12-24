@@ -13,6 +13,7 @@ public class UpdateController extends SwitchingController {
     public static String meterCode;
     public static String path;
     public static int id;
+    public static int tempPassword;
     @FXML
     private TextField name;
 

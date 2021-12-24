@@ -107,6 +107,8 @@ public class Customer extends Person {
         file.createNewFile();
         for (int i = 0; i < customers.size(); i++) {
             if (Objects.equals(customers.get(i).meterCode, customer.meterCode)) {
+                if (Objects.equals(customer.password , ""))
+                    customer.password = customers.get(i).password;
                 customers.remove(i);
                 customers.add(customer);
             }

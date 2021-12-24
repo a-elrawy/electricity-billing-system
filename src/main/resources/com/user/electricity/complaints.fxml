@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.regionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.ComplaintController">
     <children>
         <AnchorPane layoutX="-2.8421709430404007E-14" prefHeight="550.0" prefWidth="198.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="-0.39999999999997726" AnchorPane.leftAnchor="-2.8421709430404007E-14" AnchorPane.rightAnchor="551.6" AnchorPane.topAnchor="0.0">
             <children>
@@ -40,9 +40,9 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#switchToComplaints" prefHeight="50.0" prefWidth="199.0" style="-fx-background-color: #000;" text="Complaints" textFill="#fffefe">
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="199.0" style="-fx-background-color: #000;" text="Complaints" textFill="#fffefe">
                      <font>
-                        <Font name="Berlin Sans FB" size="36.0" />
+                        <Font size="32.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -75,11 +75,10 @@
                      <children>
                         <TableView fx:id="table1" prefHeight="477.0" prefWidth="550.0">
                           <columns>
-                            <TableColumn fx:id="billC" prefWidth="75.0" text="Bill No." />
-                            <TableColumn fx:id="nameC" prefWidth="130.4000244140625" text="Name" />
+                            <TableColumn fx:id="ComplaintNoC" prefWidth="42.0" text="No." />
+                            <TableColumn fx:id="nameC" prefWidth="164.0" text="Name" />
                               <TableColumn fx:id="addressC" prefWidth="128.79998779296875" text="Address" />
-                              <TableColumn fx:id="valueC" prefWidth="104.79998779296875" text="Value" />
-                              <TableColumn fx:id="comC" prefWidth="112.79998779296875" text="Consumption" />
+                              <TableColumn fx:id="comC" prefWidth="162.0" text="Complaint" />
                           </columns>
                         </TableView>
                      </children>
@@ -92,11 +91,10 @@
                      <children>
                         <TableView fx:id="table2" layoutY="-1.0" prefHeight="477.0" prefWidth="550.0">
                            <columns>
-                              <TableColumn fx:id="bill1" prefWidth="75.0" text="Bill No." />
+                              <TableColumn fx:id="ComplaintNo1" prefWidth="75.0" text=" No." />
                               <TableColumn fx:id="name1" prefWidth="131.20001220703125" text="Name" />
                               <TableColumn fx:id="address1" prefWidth="132.79998779296875" text="Address" />
-                              <TableColumn fx:id="value1" prefWidth="100.0" text="Value" />
-                              <TableColumn fx:id="com1" prefWidth="113.5999755859375" text="Consumption" />
+                              <TableColumn fx:id="com1" prefWidth="113.5999755859375" text="Complaint" />
                            </columns>
                         </TableView>
                      </children>
@@ -109,21 +107,20 @@
                      <children>
                         <TableView prefHeight="477.0" prefWidth="550.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Bill No." />
+                              <TableColumn prefWidth="75.0" text="No." />
                               <TableColumn prefWidth="75.0" text="Name" />
                               <TableColumn prefWidth="75.0" text="Address" />
                               <TableColumn prefWidth="75.0" text="Phone" />
                               <TableColumn prefWidth="75.0" text="Value" />
-                              <TableColumn prefWidth="75.0" text="Comsupmtion" />
+                              <TableColumn prefWidth="75.0" text="Complaint" />
                            </columns>
                         </TableView>
                         <TableView fx:id="table3" prefHeight="477.0" prefWidth="550.0">
                            <columns>
-                              <TableColumn fx:id="bill2" prefWidth="75.0" text="Bill No." />
+                              <TableColumn fx:id="ComplaintNo2" prefWidth="75.0" text="No." />
                               <TableColumn fx:id="name2" prefWidth="124.800048828125" text="Name" />
                               <TableColumn fx:id="address2" prefWidth="150.39996337890625" text="Address" />
-                              <TableColumn fx:id="value2" prefWidth="99.20001220703125" text="Value" />
-                              <TableColumn fx:id="com2" prefWidth="101.59991455078125" text="Consumption" />
+                              <TableColumn fx:id="com2" prefWidth="101.59991455078125" text="Complaint" />
                            </columns>
                         </TableView>
                      </children>
@@ -136,7 +133,7 @@
                      <children>
                         <TableView prefHeight="477.0" prefWidth="550.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Bill No." />
+                              <TableColumn prefWidth="75.0" text="No." />
                               <TableColumn prefWidth="75.0" text="Name" />
                               <TableColumn prefWidth="75.0" text="Address" />
                               <TableColumn prefWidth="75.0" text="Phone" />
@@ -146,10 +143,9 @@
                         </TableView>
                         <TableView fx:id="table4" prefHeight="477.0" prefWidth="550.0">
                            <columns>
-                              <TableColumn fx:id="bill3" prefWidth="75.0" text="Bill No." />
+                              <TableColumn fx:id="ComplaintNo3" prefWidth="75.0" text="No." />
                               <TableColumn fx:id="name3" prefWidth="124.800048828125" text="Name" />
                               <TableColumn fx:id="address3" prefWidth="150.39996337890625" text="Address" />
-                              <TableColumn fx:id="value3" prefWidth="99.20001220703125" text="Value" />
                               <TableColumn fx:id="com3" prefWidth="101.59991455078125" text="Consumption" />
                            </columns>
                         </TableView>

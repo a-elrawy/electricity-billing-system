@@ -62,7 +62,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="sendBut" layoutX="423.0" layoutY="394.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Send">
+            <Button fx:id="sendBut" layoutX="423.0" layoutY="394.0" mnemonicParsing="false" onAction="#sendComplaint" prefHeight="26.0" prefWidth="62.0" text="Send">
                <font>
                   <Font name="Berlin Sans FB Bold" size="14.0" />
                </font>

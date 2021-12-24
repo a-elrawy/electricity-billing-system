@@ -90,6 +90,12 @@ public class SwitchingController {
         stage.setScene(scene);
         stage.show();
     }
+    public  void switchToComplaints(ActionEvent event) throws IOException{
+        scene = getScene(event,"complaints.fxml");
+        stage.setWidth(752);stage.setHeight(579);
+        stage.setScene(scene);
+        stage.show();
+    }
     public  void switchToAllStatistics(ActionEvent event) throws IOException{
         scene = getScene(event, "statistics.fxml");
         stage.setWidth(752);stage.setHeight(579);
