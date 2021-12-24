@@ -36,7 +36,6 @@ public class customerProfileController extends SwitchingController{
     private TextField meter_code_p;
 
     public void initialize() throws IOException, ClassNotFoundException {
-        System.out.println(Utilities.CurrentUserID);
         Customer customer = Customer.read_customer(Utilities.CurrentUserID);
         assert customer != null;
         customer_name_p.setText(customer.username);
