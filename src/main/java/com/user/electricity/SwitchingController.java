@@ -102,5 +102,23 @@ public class SwitchingController {
         stage.setScene(scene);
         stage.show();
     }
+    public void switchToBills(ActionEvent event) throws IOException {
+        scene = getScene(event, "customerBills.fxml");
+        stage.setWidth(752);stage.setHeight(579);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToComplaint(ActionEvent event) throws IOException {
+        scene = getScene(event, "customerComplaint.fxml");
+        stage.setWidth(752);stage.setHeight(579);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToCustomerProfile(ActionEvent event) throws IOException {
+        scene = getScene(event, "customerProfile.fxml");
+        stage.setWidth(752);stage.setHeight(579);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }

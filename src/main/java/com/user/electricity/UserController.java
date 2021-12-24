@@ -67,6 +67,9 @@ public class UserController extends SwitchingController {
                 else if(SwitchingController.index == 2){
                     switchToRegions(event);
                 }
+                else if (SwitchingController.index == 0) {
+                    switchToCustomerProfile(event);
+                }
             }
             else
                 wrongCombination.setText("Wrong Username/password");

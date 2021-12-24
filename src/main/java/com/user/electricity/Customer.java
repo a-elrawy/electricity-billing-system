@@ -75,6 +75,14 @@ public class Customer extends Person {
         }
         return null;
     }
+    public static Customer read_customer(int userID) throws IOException, ClassNotFoundException {
+        ArrayList<Customer> customers =  Customer.read_customers();
+        for(Customer c:customers){
+            if(c.getId() == userID)
+                return c;
+        }
+        return null;
+    }
 
     public static void printAllCustomers() throws IOException, ClassNotFoundException {
         ArrayList<Customer> customers =  Customer.read_customers();

@@ -16,7 +16,6 @@ public class Home extends Application {
         scene.getStylesheets().add(getClass().getResource("css/app.css").toExternalForm());
         stage.setTitle("Electricity Billing System");
         stage.setScene(scene);
-
         stage.show();
     }
 

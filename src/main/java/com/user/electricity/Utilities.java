@@ -15,6 +15,7 @@ public class Utilities {
     static String OperatorsFilename = "operators.txt";
     static String AdminFilename = "admins.txt";
     static int UserCount =0;
+    static int CurrentUserID;
     public static String generateMeterCode(String region){
         return  region.charAt(0)+ String.valueOf(UserCount);
     }
@@ -63,8 +64,10 @@ public class Utilities {
         boolean login = false;
         ArrayList<Person> people = Person.read_people(filename);
         for (Person c:  people) {
-            if (c.getUsername().equals(person.getUsername()) && c.getPassword().equals(person.getPassword()))
+            if (c.getUsername().equals(person.getUsername()) && c.getPassword().equals(person.getPassword())) {
                 login = true;
+                Utilities.CurrentUserID = c.getId();
+            }
         }
         return login;
     }
