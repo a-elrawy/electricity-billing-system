@@ -47,14 +47,24 @@ public class regionController extends SwitchingController implements Initializab
     @FXML
     private TableColumn<billsData, Double> value2;
 
-
-
+        @FXML
+    private TableColumn<billsData, String> address3;
     @FXML
+    private TableColumn<billsData, Integer> bill3;
+    @FXML
+    private TableColumn<billsData, Double> com3;
+    @FXML
+    private TableColumn<billsData, String> name3;
+    @FXML
+    private TableColumn<billsData, Double> value3;
+        @FXML
     private TableView<billsData> table1;
     @FXML
     private TableView<billsData> table2;
     @FXML
     private TableView<billsData> table3;
+    @FXML
+    private TableView<billsData> table4;
 
     ArrayList<ObservableList<billsData>> lists = new ArrayList<>(3);
 
@@ -62,9 +72,11 @@ public class regionController extends SwitchingController implements Initializab
         set(billC, nameC, addressC, valueC, comC);
         set(bill1, name1, address1, value1, com1);
         set(bill2, name2, address2, value2, com2);
+        set(bill3, name3, address3, value3, com3);
         table1.setItems(lists.get(0));
         table2.setItems(lists.get(1));
         table3.setItems(lists.get(2));
+        table4.setItems(lists.get(3));
     }
 
     static void set(TableColumn<billsData, Integer> bill, TableColumn<billsData, String> name, TableColumn<billsData, String> address, TableColumn<billsData, Double> value, TableColumn<billsData, Double> com) {
@@ -79,14 +91,21 @@ public class regionController extends SwitchingController implements Initializab
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             String[] regions = {"Cairo", "Giza", "Alex"};
+            ObservableList<billsData> list;
             for (int i = 0; i < regions.length; i++) {
+                list = FXCollections.observableArrayList();
                 ArrayList<Customer> customers = Customer.getCustomersByRegion(regions[i]);
-                ObservableList<billsData> list = FXCollections.observableArrayList();
                 for(Customer c : customers){
                     list.add(new billsData(c.getId(),c.getUsername(),c.getAddress(),c.getAmount(),c.getRealConsumption()));
                 }
                 lists.add(list);
             }
+            list = FXCollections.observableArrayList();
+            for (ObservableList<billsData> l : lists) {
+                list.addAll(l);
+            }
+            lists.add(list);
+
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }

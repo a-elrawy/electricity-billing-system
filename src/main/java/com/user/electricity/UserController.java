@@ -59,11 +59,9 @@ public class UserController extends SwitchingController {
     // Login and Validation
     public void login(ActionEvent event) throws IOException, ClassNotFoundException {
         Person person = new Person(username.getText(),password.getText());
-        System.out.println(SwitchingController.index);
             if(!Files.exists(Path.of(files[SwitchingController.index])))
                 wrongCombination.setText("There must be Users");
             if(Utilities.validate_login(person, files[SwitchingController.index])) {
-                // To be Implemented
                 if(SwitchingController.index == 1)
                     switchToOperator(event);
                 else if(SwitchingController.index == 2){
@@ -73,9 +71,6 @@ public class UserController extends SwitchingController {
             else
                 wrongCombination.setText("Wrong Username/password");
         }
-
-
-
 
 
 

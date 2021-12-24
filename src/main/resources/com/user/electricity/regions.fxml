@@ -122,6 +122,33 @@
                   </AnchorPane>
                </content>
             </Tab>
+            <Tab text="All">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="477.0" prefWidth="550.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="Bill No." />
+                              <TableColumn prefWidth="75.0" text="Name" />
+                              <TableColumn prefWidth="75.0" text="Address" />
+                              <TableColumn prefWidth="75.0" text="Phone" />
+                              <TableColumn prefWidth="75.0" text="Value" />
+                              <TableColumn prefWidth="75.0" text="Comsupmtion" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="table4" prefHeight="477.0" prefWidth="550.0">
+                           <columns>
+                              <TableColumn fx:id="bill3" prefWidth="75.0" text="Bill No." />
+                              <TableColumn fx:id="name3" prefWidth="124.800048828125" text="Name" />
+                              <TableColumn fx:id="address3" prefWidth="150.39996337890625" text="Address" />
+                              <TableColumn fx:id="value3" prefWidth="99.20001220703125" text="Value" />
+                              <TableColumn fx:id="com3" prefWidth="101.59991455078125" text="Consumption" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
     </children>

@@ -50,6 +50,7 @@ private TextField RKeyField;
 public void printBill(ActionEvent E) throws IOException, ClassNotFoundException {
     String MeterCode = MeterCodef.getText();
     Customer C = Customer.read_customer(MeterCode);
+    assert C != null;
     Bill B = new Bill(MeterCode , C.getUsername(), 0.14 , 0.14*C.getAmount() ,C.getAmount() );
     Billview.setText(B.toString());
     }
@@ -60,15 +61,12 @@ public void printBill(ActionEvent E) throws IOException, ClassNotFoundException 
     public void validate (ActionEvent E) throws  IOException, ClassNotFoundException{
         String MeterCode = MeterCodef.getText();
         Customer C = Customer.read_customer(MeterCode);
+        assert C != null;
         if (C.getAmount() == C.getRealConsumption()){
             System.out.println("Right");
         }
     }
-    public void ViewRegion(ActionEvent event) throws IOException, ClassNotFoundException {
-        String region = RKeyField.getText();
-        ArrayList<Customer> customers = Customer.getCustomersByRegion(region);
 
-    }
 }
 
 
