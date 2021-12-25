@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.customerBillsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.customerProfileController">
     <children>
         <AnchorPane layoutX="-2.8421709430404007E-14" prefHeight="550.0" prefWidth="198.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="-0.39999999999997726" AnchorPane.leftAnchor="-2.8421709430404007E-14" AnchorPane.rightAnchor="551.6" AnchorPane.topAnchor="0.0">
             <children>
@@ -76,9 +76,9 @@
                   <InnerShadow />
                </effect>
             </TextArea>
-            <TextField fx:id="custeomer_name_p" layoutX="201.0" layoutY="124.0" prefHeight="30.0" prefWidth="234.0" />
-            <TextField fx:id="addtess_p" layoutX="201.0" layoutY="171.0" prefHeight="30.0" prefWidth="234.0" />
-            <TextField fx:id="government_p" layoutX="201.0" layoutY="228.0" prefHeight="30.0" prefWidth="234.0" />
+            <TextField fx:id="customer_name_2" layoutX="201.0" layoutY="124.0" prefHeight="30.0" prefWidth="234.0" />
+            <TextField fx:id="address_2" layoutX="201.0" layoutY="171.0" prefHeight="30.0" prefWidth="234.0" />
+            <TextField fx:id="government_2" layoutX="201.0" layoutY="228.0" prefHeight="30.0" prefWidth="234.0" />
             <TextField fx:id="charges_p" layoutX="202.0" layoutY="278.0" prefHeight="30.0" prefWidth="234.0" />
             <TextField fx:id="real_comsuption_p" layoutX="215.0" layoutY="340.0" prefHeight="30.0" prefWidth="234.0" />
             </children>
