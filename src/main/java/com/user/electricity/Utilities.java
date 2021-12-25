@@ -21,6 +21,7 @@ public class Utilities {
     static String ComplaintsFilename = "complaints.txt";
     static int UserCount =0;
     static int CurrentUserID;
+
     public static String generateMeterCode(String region){
         return  region.charAt(0)+ String.valueOf(UserCount);
     }
