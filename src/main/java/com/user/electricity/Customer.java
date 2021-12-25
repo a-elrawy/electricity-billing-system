@@ -15,6 +15,7 @@ public class Customer extends Person {
     private String pathToContract;
     private double amount;
     private double realConsumption ;
+    private int lastMonth;
     private static File file = new File(Utilities.CustomersFilename);
     public Customer(String username,String password){
         super(username,password);
@@ -34,7 +35,7 @@ public class Customer extends Person {
     }
 // For Reading Only
 
-    public Customer(int id, String username, String email, String password, String address, String region, String meterCode, String pathToContract, double amount, double realConsumption) {
+    public Customer(int id, String username, String email, String password, String address, String region, String meterCode, String pathToContract, double amount, double realConsumption,int lastMonth) {
         super(id, username, email, password);
         this.address = address;
         this.region = region;
@@ -42,6 +43,7 @@ public class Customer extends Person {
         this.pathToContract = pathToContract;
         this.amount = amount;
         this.realConsumption = realConsumption;
+        this.lastMonth = lastMonth;
     }
 
 
@@ -58,7 +60,7 @@ public class Customer extends Person {
     }
     @Override
     public String toString() {
-        return "" + id +"|"+ username + "|" + email+ "|"+ password+ "|" + address+ "|" + region + "|" +  meterCode+ "|" + pathToContract + "|" + amount+"|" + realConsumption;
+        return "" + id +"|"+ username + "|" + email+ "|"+ password+ "|" + address+ "|" + region + "|" +  meterCode+ "|" + pathToContract + "|" + amount+"|" + realConsumption+"|"+lastMonth;
     }
 
     // To ve Generalized
@@ -69,7 +71,7 @@ public class Customer extends Person {
             String line = scanner.nextLine();
             String[] items = line.split("\\|");
             int id = Integer.parseInt(items[0]);
-            Customer customer = new Customer(id,items[1],items[2],items[3],items[4],items[5],items[6],items[7],Double.parseDouble(items[8]),Double.parseDouble(items[9]));
+            Customer customer = new Customer(id,items[1],items[2],items[3],items[4],items[5],items[6],items[7],Double.parseDouble(items[8]),Double.parseDouble(items[9]),Integer.parseInt(items[10]));
             customers.add(customer);
         }
         return customers;
@@ -162,5 +164,13 @@ public class Customer extends Person {
 
     public void setRealConsumption(double realConsumption) {
         this.realConsumption = realConsumption;
+    }
+
+    public int getLastMonth() {
+        return lastMonth;
+    }
+
+    public void setLastMonth(int lastMonth) {
+        this.lastMonth = lastMonth;
     }
 }

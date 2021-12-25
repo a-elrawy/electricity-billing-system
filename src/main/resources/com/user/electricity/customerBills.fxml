@@ -53,12 +53,12 @@
         </AnchorPane>
         <AnchorPane layoutX="211.0" layoutY="79.0" prefHeight="456.0" prefWidth="522.0">
             <children>
-                <Label layoutX="19.0" layoutY="13.0" prefHeight="26.0" prefWidth="234.0" text="Monthly reading:">
+                <Label layoutX="8.0" prefHeight="26.0" prefWidth="234.0" text="Monthly reading:">
                     <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                     </font>
                 </Label>
-                <TextField fx:id="MonthlyRead" layoutX="204.0" layoutY="13.0" prefHeight="26.0" prefWidth="198.0">
+                <TextField fx:id="MonthlyRead" layoutX="167.0" layoutY="25.0" prefHeight="28.0" prefWidth="112.0">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -82,9 +82,19 @@
             <TextField fx:id="charges_p" layoutX="202.0" layoutY="278.0" prefHeight="30.0" prefWidth="234.0" />
             <TextField fx:id="real_comsuption_p" layoutX="215.0" layoutY="340.0" prefHeight="30.0" prefWidth="234.0" />
             <Button fx:id="pay" layoutX="201.0" layoutY="386.0" mnemonicParsing="false" onAction="#Pay" prefHeight="24.0" prefWidth="72.0" text="Pay" />
+            <TextField fx:id="LastMonth" layoutX="319.0" layoutY="25.0" prefHeight="24.0" prefWidth="50.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="317.0" prefHeight="26.0" prefWidth="72.0" text="Month:">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
-        <Label alignment="CENTER" layoutX="304.0" layoutY="37.0" prefHeight="26.0" prefWidth="234.0" text="Customer" textAlignment="CENTER">
+        <Label alignment="CENTER" layoutX="350.0" layoutY="20.0" prefHeight="26.0" prefWidth="234.0" text="Customer" textAlignment="CENTER">
             <font>
                 <Font name="Berlin Sans FB" size="36.0" />
             </font>

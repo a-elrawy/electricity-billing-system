@@ -50,6 +50,8 @@ public class customerProfileController extends SwitchingController{
 
     @FXML
     private Button pay;
+    @FXML
+    private TextField LastMonth;
 
     public void initialize() throws IOException, ClassNotFoundException {
         Customer customer = Customer.read_customer(Utilities.CurrentUserID);
@@ -86,11 +88,15 @@ public class customerProfileController extends SwitchingController{
             address_2.setText(customer.getAddress());
             real_comsuption_p.setText(customer.getRealConsumption() + "");
             double monthlyReading = monthlyRead;
+            int lastMonth = Integer.parseInt(LastMonth.getText());
+//            if (lastMonth - customer.getLastMonth() > 3)
+//                Utilities.sendEmail(customer,"Warning\n you Haven't paid a bill for the last three months");
             double charges = monthlyReading * chargeConstant;
             charges += Utilities.tarrif*charges;
             charges_p.setText(charges + "");
             pay.setVisible(true);
             customer.setAmount(monthlyRead);
+            customer.setLastMonth(lastMonth);
             Customer.update_customer(customer);
         } else
             pay.setVisible(false);
