@@ -55,7 +55,7 @@ public class Utilities {
             Scanner scanner = new Scanner(new File(filename));
             UserCount = scanner.nextInt();
             FileWriter file = new FileWriter(filename);
-            file.write(String.valueOf(UserCount++));
+            file.write(String.valueOf(++UserCount));
             file.close();
         } catch (Exception e) {
             writeNumbers(filename);
