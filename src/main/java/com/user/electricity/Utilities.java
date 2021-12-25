@@ -10,12 +10,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.Scanner;
-/*
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.Transport;
-*/
 public class Utilities {
     static String CustomersFilename = "customers.txt";
     static String OperatorsFilename = "operators.txt";
@@ -23,7 +21,7 @@ public class Utilities {
     static String ComplaintsFilename = "complaints.txt";
     static int UserCount =0;
     static int CurrentUserID;
-
+    static double tarrif = 0.14;
     public static String generateMeterCode(String region){
         return  region.charAt(0)+ String.valueOf(UserCount);
     }
@@ -79,7 +77,7 @@ public class Utilities {
         }
         return login;
     }
-   /* public static void sendEmail(Customer customer, String text){
+    public static void sendEmail(Customer customer, String text){
         String from = "admin@gmail.com";
         String to = customer.getEmail();
         String host = "smtp.gmail.com";
@@ -115,5 +113,5 @@ public class Utilities {
 
     }
 
-*/
+
 }

@@ -48,6 +48,9 @@ public class customerProfileController extends SwitchingController{
     @FXML
     private TextField real_comsuption_p;
 
+    @FXML
+    private Button pay;
+
     public void initialize() throws IOException, ClassNotFoundException {
         Customer customer = Customer.read_customer(Utilities.CurrentUserID);
         assert customer != null;
@@ -57,8 +60,10 @@ public class customerProfileController extends SwitchingController{
             government_p.setText(customer.getRegion());
             meter_code_p.setText(customer.getMeterCode());
             address_p.setText(customer.getAddress());
-        } catch (Exception ignored){
-
+        } catch (Exception e){
+            try {
+                pay.setVisible(false);
+            }catch (Exception ignored){}
         }
 
     }
@@ -73,14 +78,22 @@ public class customerProfileController extends SwitchingController{
 
     public void PrintBillDetails() throws IOException, ClassNotFoundException {
         Customer customer = Customer.read_customer(Utilities.CurrentUserID);
+        double monthlyRead = Double.parseDouble(MonthlyRead.getText());
         assert customer != null;
-        customer_name_2.setText(customer.username);
-        government_2.setText(customer.getRegion());
-        address_2.setText(customer.getAddress());
-        real_comsuption_p.setText(customer.getRealConsumption()+"");
-        double monthlyReading = Double.parseDouble(MonthlyRead.getText());
-        double charges = monthlyReading * chargeConstant;
-        charges_p.setText(charges + "");
+        if (customer.getRealConsumption()-monthlyRead <50 &&customer.getRealConsumption()-monthlyRead>0 ) {
+            customer_name_2.setText(customer.username);
+            government_2.setText(customer.getRegion());
+            address_2.setText(customer.getAddress());
+            real_comsuption_p.setText(customer.getRealConsumption() + "");
+            double monthlyReading = monthlyRead;
+            double charges = monthlyReading * chargeConstant;
+            charges += Utilities.tarrif*charges;
+            charges_p.setText(charges + "");
+            pay.setVisible(true);
+            customer.setAmount(monthlyRead);
+            Customer.update_customer(customer);
+        } else
+            pay.setVisible(false);
     }
 
 

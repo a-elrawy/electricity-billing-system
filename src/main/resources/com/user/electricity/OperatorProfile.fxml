@@ -19,16 +19,17 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="347.0" layoutY="173.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="158.0" text="Validate Reading" />
-                        <Button layoutX="347.0" layoutY="247.0" mnemonicParsing="false" onAction="#Cancel_Subscription" prefHeight="26.0" prefWidth="158.0" text="Cancel Subscripition " />
-                        <Button fx:id="PrintBillbtn" layoutX="347.0" layoutY="209.0" mnemonicParsing="false" onAction="#printBill" prefHeight="26.0" prefWidth="158.0" text="Print Bill" />
-                        <TextField fx:id="MeterCodef" layoutX="347.0" layoutY="122.0" prefHeight="26.0" prefWidth="158.0" />
+                        <Button layoutX="347.0" layoutY="224.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="158.0" text="Validate Reading" />
+                        <Button layoutX="347.0" layoutY="298.0" mnemonicParsing="false" onAction="#Cancel_Subscription" prefHeight="26.0" prefWidth="158.0" text="Cancel Subscripition " />
+                        <Button fx:id="PrintBillbtn" layoutX="347.0" layoutY="260.0" mnemonicParsing="false" onAction="#printBill" prefHeight="26.0" prefWidth="158.0" text="Print Bill" />
+                        <TextField fx:id="MeterCodef" layoutX="347.0" layoutY="176.0" prefHeight="26.0" prefWidth="158.0" />
                         <Label fx:id="Billview" alignment="TOP_CENTER" layoutX="28.0" layoutY="55.0" prefHeight="262.0" prefWidth="203.0" text="Your Bill " />
                         <ImageView fitHeight="71.0" fitWidth="160.0" layoutX="349.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@img/ezpay-logo.png" />
                            </image>
                         </ImageView>
+                        <Label layoutX="353.0" layoutY="147.0" prefHeight="18.0" prefWidth="114.0" text="Meter Code" />
                      </children>
                   </AnchorPane>
             </content>
@@ -59,6 +60,25 @@
                   </AnchorPane>
             </content>
           </Tab>
+            <Tab text="Real Consumption ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane prefHeight="372.0" prefWidth="600.0">
+                           <children>
+                              <TextField fx:id="realConsumption" layoutX="356.0" layoutY="159.0" prefHeight="26.0" prefWidth="158.0" />
+                              <Label layoutX="365.0" layoutY="132.0" prefHeight="18.0" prefWidth="114.0" text="Real Consumption" />
+                              <TextField fx:id="tariff" layoutX="357.0" layoutY="224.0" prefHeight="26.0" prefWidth="158.0" />
+                              <Label layoutX="362.0" layoutY="200.0" prefHeight="18.0" prefWidth="114.0" text="Tariff" />
+                              <TextField fx:id="MeterCodeF" layoutX="357.0" layoutY="90.0" prefHeight="26.0" prefWidth="158.0" />
+                              <Label layoutX="363.0" layoutY="61.0" prefHeight="18.0" prefWidth="114.0" text="Meter Code" />
+                              <Button layoutX="387.0" layoutY="278.0" mnemonicParsing="false" onAction="#defineRealConsumption" prefHeight="26.0" prefWidth="95.0" text="Submit" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

@@ -19,6 +19,12 @@ private TextField MeterCodef;
 private Label Billview ;
 @FXML
 private TextField RKeyField;
+    @FXML
+    private TextField MeterCodeF;
+    @FXML
+    private TextField realConsumption;
+    @FXML
+    private TextField tariff;
 
     @FXML
     private TableColumn<billsData, String> addressC;
@@ -51,7 +57,7 @@ public void printBill(ActionEvent E) throws IOException, ClassNotFoundException 
     String MeterCode = MeterCodef.getText();
     Customer C = Customer.read_customer(MeterCode);
     assert C != null;
-    Bill B = new Bill(MeterCode , C.getUsername(), 0.14 , 0.14*C.getAmount() ,C.getAmount() );
+    Bill B = new Bill(MeterCode , C.getUsername(), Utilities.tarrif , Utilities.tarrif*C.getAmount() ,C.getAmount());
     Billview.setText(B.toString());
     }
     public void Cancel_Subscription (ActionEvent E) throws IOException, ClassNotFoundException {
@@ -65,6 +71,14 @@ public void printBill(ActionEvent E) throws IOException, ClassNotFoundException 
         if (C.getAmount() == C.getRealConsumption()){
             System.out.println("Right");
         }
+    }
+    public void defineRealConsumption(ActionEvent event) throws IOException, ClassNotFoundException {
+        String meterCode = MeterCodeF.getText();
+        Customer customer = Customer.read_customer(meterCode);
+        assert customer != null;
+        customer.setRealConsumption(Double.parseDouble(realConsumption.getText()));
+        try{Utilities.tarrif = Double.parseDouble(tariff.getText());}catch (Exception ignored){}
+        Customer.update_customer(customer);
     }
 
 }
