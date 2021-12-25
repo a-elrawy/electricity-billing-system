@@ -81,7 +81,7 @@
             <TextField fx:id="government_2" layoutX="201.0" layoutY="228.0" prefHeight="30.0" prefWidth="234.0" />
             <TextField fx:id="charges_p" layoutX="202.0" layoutY="278.0" prefHeight="30.0" prefWidth="234.0" />
             <TextField fx:id="real_comsuption_p" layoutX="215.0" layoutY="340.0" prefHeight="30.0" prefWidth="234.0" />
-            <Button fx:id="pay" layoutX="201.0" layoutY="386.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="72.0" text="Pay" />
+            <Button fx:id="pay" layoutX="201.0" layoutY="386.0" mnemonicParsing="false" onAction="#Pay" prefHeight="24.0" prefWidth="72.0" text="Pay" />
             </children>
         </AnchorPane>
         <Label alignment="CENTER" layoutX="304.0" layoutY="37.0" prefHeight="26.0" prefWidth="234.0" text="Customer" textAlignment="CENTER">

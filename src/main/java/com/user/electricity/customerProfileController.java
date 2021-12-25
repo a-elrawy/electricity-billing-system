@@ -80,7 +80,7 @@ public class customerProfileController extends SwitchingController{
         Customer customer = Customer.read_customer(Utilities.CurrentUserID);
         double monthlyRead = Double.parseDouble(MonthlyRead.getText());
         assert customer != null;
-        if (customer.getRealConsumption()-monthlyRead <50 &&customer.getRealConsumption()-monthlyRead>0 ) {
+        if (customer.getRealConsumption()-monthlyRead <50 ) {
             customer_name_2.setText(customer.username);
             government_2.setText(customer.getRegion());
             address_2.setText(customer.getAddress());
@@ -95,6 +95,14 @@ public class customerProfileController extends SwitchingController{
         } else
             pay.setVisible(false);
     }
-
+    public void Pay() throws IOException, ClassNotFoundException {
+        Customer customer = Customer.read_customer(Utilities.CurrentUserID);
+        double monthlyRead = Double.parseDouble(MonthlyRead.getText());
+        double charges = monthlyRead * chargeConstant;
+        charges += Utilities.tarrif*charges;
+        assert customer != null;
+        Utilities.write(new billsData(Utilities.getNumberOfObjects(Utilities.BillsFilename),customer.getUsername(),customer.getAddress(),
+                charges,monthlyRead),Utilities.BillsFilename);
+    }
 
 }

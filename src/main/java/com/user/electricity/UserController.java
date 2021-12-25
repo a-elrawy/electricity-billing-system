@@ -50,8 +50,8 @@ public class UserController extends SwitchingController {
     // Sign UP
     public void signup(ActionEvent event) throws IOException {
         String region = government.getSelectionModel().getSelectedItem();
-        Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),region,
-                Utilities.generateMeterCode(region),path.getText());
+        Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),region,path.getText());
+        customer.setMeterCode(region.charAt(0)+ String.valueOf(Utilities.UserCount));
         Utilities.write(customer,Utilities.CustomersFilename);
         switchToLogin(event);
 //        Utilities.sendEmail(customer,"Signup Confirmation your username is "+ customer.username + "\n Thanks for using our services. ");

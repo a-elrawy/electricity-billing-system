@@ -19,6 +19,7 @@ public class Utilities {
     static String OperatorsFilename = "operators.txt";
     static String AdminFilename = "admins.txt";
     static String ComplaintsFilename = "complaints.txt";
+    static String BillsFilename = "bills.txt";
     static int UserCount =0;
     static int CurrentUserID;
     static double tarrif = 0.14;

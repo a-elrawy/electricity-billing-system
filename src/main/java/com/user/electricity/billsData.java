@@ -13,6 +13,7 @@ public class billsData {
         this.consumption = consumption;
     }
 
+
     public void setName(String name) {
         this.name = name;
     }
@@ -51,5 +52,10 @@ public class billsData {
 
     public double getConsumption() {
         return consumption;
+    }
+
+    @Override
+    public String toString() {
+        return "" + billNo +"|"+ name + "|" + address+ "|"+ value+ "|" + consumption;
     }
 }

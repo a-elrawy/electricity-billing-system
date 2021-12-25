@@ -19,11 +19,10 @@ public class Customer extends Person {
     public Customer(String username,String password){
         super(username,password);
     }
-    public Customer(String username, String email , String password, String address, String region, String meterCode, String pathToContract) throws IOException {
+    public Customer(String username, String email , String password, String address, String region, String pathToContract) throws IOException {
         super(username,email,password);
         this.address = address;
         this.region = region;
-        this.meterCode = meterCode;
         this.pathToContract = pathToContract;
     }
     public Customer(int id, String username, String email , String password, String address, String region, String meterCode, String pathToContract) {
