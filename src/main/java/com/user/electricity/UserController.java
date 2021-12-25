@@ -54,6 +54,7 @@ public class UserController extends SwitchingController {
                 Utilities.generateMeterCode(region),path.getText());
         Utilities.write(customer,Utilities.CustomersFilename);
         switchToLogin(event);
+//        Utilities.sendEmail(customer,"Signup Confirmation your username is "+ customer.username + "\n Thanks for using our services. ");
     }
 
     // Login and Validation
