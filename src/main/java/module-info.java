@@ -1,7 +1,7 @@
 module com.user.electricity {
     requires javafx.controls;
     requires javafx.fxml;
-    //requires javax.mail;
+    requires java.mail;
 
 
     opens com.user.electricity to javafx.fxml;
