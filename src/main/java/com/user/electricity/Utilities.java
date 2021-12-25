@@ -79,11 +79,11 @@ public class Utilities {
         return login;
     }
     public static void sendEmail(Customer customer, String text){
-        String from = "admin@gmail.com";
+        String from = "pl2project1@gmail.com";
         String to = customer.getEmail();
         String host = "smtp.gmail.com";
         final String username = from;
-        final String password = "adminPassword";
+        final String password = "admin_admin";
 
         Properties props =System.getProperties();
         props.put("mail.smtp.auth", true);

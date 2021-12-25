@@ -89,8 +89,8 @@ public class customerProfileController extends SwitchingController{
             real_comsuption_p.setText(customer.getRealConsumption() + "");
             double monthlyReading = monthlyRead;
             int lastMonth = Integer.parseInt(LastMonth.getText());
-//            if (lastMonth - customer.getLastMonth() > 3)
-//                Utilities.sendEmail(customer,"Warning\n you Haven't paid a bill for the last three months");
+            if (lastMonth - customer.getLastMonth() > 3)
+                Utilities.sendEmail(customer,"Warning\n you Haven't paid a bill for the last three months");
             double charges = monthlyReading * chargeConstant;
             charges += Utilities.tarrif*charges;
             charges_p.setText(charges + "");

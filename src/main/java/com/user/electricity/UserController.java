@@ -54,7 +54,7 @@ public class UserController extends SwitchingController {
         customer.setMeterCode(region.charAt(0)+ String.valueOf(Utilities.UserCount));
         Utilities.write(customer,Utilities.CustomersFilename);
         switchToLogin(event);
-//        Utilities.sendEmail(customer,"Signup Confirmation your username is "+ customer.username + "\n Thanks for using our services. ");
+        Utilities.sendEmail(customer,"Signup Confirmation your username is "+ customer.username +  ", your metercode is " +customer.getMeterCode()+ "\n Thanks for using our services. ");
     }
 
     // Login and Validation
