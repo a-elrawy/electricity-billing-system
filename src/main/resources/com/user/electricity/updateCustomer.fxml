@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.UpdateController">
+   <children>
+      <AnchorPane prefHeight="407.0" prefWidth="222.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button layoutX="57.0" layoutY="101.0" mnemonicParsing="false" onAction="#switchToRegions" prefHeight="37.0" prefWidth="110.0" style="-fx-background-color: #000000;" text="Bills" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="55.0" layoutY="201.0" mnemonicParsing="false" onAction="#switchToModify" prefHeight="49.0" prefWidth="114.0" style="-fx-background-color: #000000;" text="Modify" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-1.0" mnemonicParsing="false" onAction="#switchToHome" text="Home">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="146.0" layoutY="372.0" mnemonicParsing="false" onAction="#switchToHome" text="Logout">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="name" layoutX="381.0" layoutY="80.0" prefHeight="25.0" prefWidth="181.0" />
+      <TextField fx:id="region" layoutX="381.0" layoutY="132.0" prefHeight="25.0" prefWidth="181.0" />
+      <TextField fx:id="address" layoutX="381.0" layoutY="194.0" prefHeight="25.0" prefWidth="181.0" />
+      <TextField fx:id="email" layoutX="381.0" layoutY="248.0" prefHeight="25.0" prefWidth="181.0" />
+      <Text layoutX="231.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="129.13671875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="231.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Region" wrappingWidth="122.13671875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="231.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="129.13671875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="235.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E_mail" wrappingWidth="129.13671875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="231.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="129.13671875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="password" layoutX="381.0" layoutY="309.0" prefHeight="25.0" prefWidth="181.0" />
+      <Button layoutX="359.0" layoutY="361.0" mnemonicParsing="false" onAction="#submit" prefHeight="32.0" prefWidth="80.0" style="-fx-background-color: #000000;" text="Submit " textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label />
+      <Label fx:id="meterCodeLabel" layoutX="386.0" layoutY="26.0" prefHeight="32.0" prefWidth="171.0" />
+      <Text layoutX="231.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meter code " wrappingWidth="129.13671875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

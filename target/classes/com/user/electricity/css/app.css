@@ -1,0 +1,39 @@
+*{
+    -fx-align-content: center;
+    -fx-align-self: center;
+}
+Button {
+    -fx-background-color: #000;
+    -fx-color: #000;
+    -fx-padding: 7px 10px;
+    -fx-margin: 8px 0;
+    -fx-border: none;
+    -fx-cursor: pointer;
+    -fx-width: 100%;
+    -fx-opacity: 0.9;
+}
+ChoiceBox {
+    -fx-background-color: #fff;
+    -fx-border-color: black;
+    -fx-color: #fff;
+
+
+}
+@font-face {
+    font-family: Berlin;
+    stc: url('com/user/electricity/fonts/Berlin Sans FB Regular.ttf')
+}
+Label{
+    /*-fx-font-size: 18px;*/
+    -fx-font-weight: bold;
+    -fx-font-family: "sans-serif";
+    -fx-text-align: center;
+}
+TextField, PasswordField{
+    -fx-width: 100%;
+    /*-fx-padding: 10px;*/
+    -fx-margin: 5px 0 22px 0;
+    -fx-display: inline-block;
+    -fx-border: none;
+    -fx-background: transparent;
+}
