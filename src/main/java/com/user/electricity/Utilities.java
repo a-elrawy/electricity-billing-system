@@ -23,6 +23,8 @@ public class Utilities {
     static int UserCount =0;
     static int CurrentUserID;
     static double tarrif = 0.14;
+    final static double chargeConstant = 5.5;
+
     public static String generateMeterCode(String region){
         return  region.charAt(0)+ String.valueOf(UserCount);
     }
@@ -112,6 +114,13 @@ public class Utilities {
             e.printStackTrace();;
         }
 
+    }
+
+
+    public static double calculateCharge(double consumption){
+        double charge = consumption * Utilities.chargeConstant;
+        charge += Utilities.tarrif*charge;
+        return charge;
     }
 
 

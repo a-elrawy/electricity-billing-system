@@ -141,7 +141,7 @@ public class Customer extends Person {
     public static double getTotal(ArrayList<Customer> customers){
         double total = 0;
         for (Customer c: customers){
-            total+=c.getRealConsumption();
+            total+=Utilities.calculateCharge(c.getAmount());
         }
         return total;
     }

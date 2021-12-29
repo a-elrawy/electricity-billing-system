@@ -57,8 +57,14 @@ public void printBill(ActionEvent E) throws IOException, ClassNotFoundException 
     String MeterCode = MeterCodef.getText();
     Customer C = Customer.read_customer(MeterCode);
     assert C != null;
-    Bill B = new Bill(MeterCode , C.getUsername(), Utilities.tarrif , Utilities.tarrif*C.getAmount() ,C.getAmount());
-    Billview.setText(B.toString());
+    double charges = Utilities.calculateCharge(C.getAmount());
+    String billdata = "Your Bill Details \n" +
+            "-------------------------- \n" +
+            "\n Your MeterCode is : " + MeterCode +
+            "\n Your Monthly Reading is : " + C.getAmount() +
+            "\n Your Tariff is : " + Utilities.tarrif +
+            "\n You Have To Pay : " + charges;
+    Billview.setText(billdata);
     }
     public void Cancel_Subscription (ActionEvent E) throws IOException, ClassNotFoundException {
         String MeterCode = MeterCodef.getText();

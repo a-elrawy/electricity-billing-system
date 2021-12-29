@@ -12,14 +12,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.user.electricity.UserController">
     <children>
-        <ImageView fitHeight="508.0" fitWidth="542.0" layoutX="258.0" layoutY="1.0" onMouseClicked="#initializeG" pickOnBounds="true">
+        <ImageView fitHeight="508.0" fitWidth="542.0" layoutX="258.0" layoutY="1.0" onMouseClicked="#initialize" pickOnBounds="true">
             <image>
                 <Image url="@img/whiteShadow.png" />
             </image>
         </ImageView>
-        <TextField fx:id="username" layoutX="364.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" onKeyTyped="#initializeG" onMouseClicked="#initializeG" prefHeight="24.0" prefWidth="216.0" />
+        <TextField fx:id="username" layoutX="364.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" onKeyTyped="#initialize" onMouseClicked="#initialize" prefHeight="24.0" prefWidth="216.0" />
         <Label layoutX="352.0" layoutY="65.0" text="Username" />
-        <Button fx:id="sumbit" layoutX="394.0" layoutY="434.0" mnemonicParsing="false" onAction="#signup" prefHeight="26.0" prefWidth="134.0" text="Submit" />
+        <Button fx:id="sumbit" layoutX="394.0" layoutY="437.0" mnemonicParsing="false" onAction="#signup" prefHeight="26.0" prefWidth="134.0" text="Submit" />
         <ImageView fitHeight="535.0" fitWidth="341.0" layoutX="-14.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@img/558201-electricity-picture-hd.jpg" />
@@ -45,7 +45,7 @@
             <Image url="@img/24949-1-sign-up-button-transparent-image-thumb.png" />
          </image>
       </ImageView>
-      <ChoiceBox fx:id="government" layoutX="364.0" layoutY="330.0" onMouseClicked="#initializeG" prefHeight="24.0" prefWidth="216.0" />
+      <ChoiceBox fx:id="government" layoutX="364.0" layoutY="330.0" onMouseClicked="#initialize" prefHeight="24.0" prefWidth="216.0" />
       <Label fx:id="supLabel" layoutX="372.0" layoutY="17.0" prefHeight="34.0" prefWidth="187.0" text="Add Customer">
          <font>
             <Font size="19.0" />
@@ -57,5 +57,6 @@
          </font>
       </Button>
       <Button fx:id="sumbitAdmin" layoutX="404.0" layoutY="444.0" mnemonicParsing="false" onAction="#add" prefHeight="26.0" prefWidth="134.0" text="Submit" />
+      <Label fx:id="errorm" layoutX="362.0" layoutY="417.0" text="Please Enter All the Fields" textFill="RED" />
     </children>
 </AnchorPane>

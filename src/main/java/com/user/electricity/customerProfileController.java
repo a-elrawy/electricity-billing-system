@@ -28,7 +28,6 @@ public class customerProfileController extends SwitchingController{
     private TextField meter_code_p;
     @FXML
     private TextArea comText;
-    private final static double chargeConstant = 5.5;
 
     @FXML
     private TextField address_2;
@@ -52,7 +51,10 @@ public class customerProfileController extends SwitchingController{
     private Button pay;
     @FXML
     private TextField LastMonth;
-
+    @FXML
+    private Label error;
+    @FXML
+    private Label errorm;
     public void initialize() throws IOException, ClassNotFoundException {
         Customer customer = Customer.read_customer(Utilities.CurrentUserID);
         assert customer != null;
@@ -64,6 +66,8 @@ public class customerProfileController extends SwitchingController{
             address_p.setText(customer.getAddress());
         } catch (Exception e){
             try {
+                errorm.setVisible(false);
+                error.setVisible(false);
                 pay.setVisible(false);
             }catch (Exception ignored){}
         }
@@ -80,19 +84,32 @@ public class customerProfileController extends SwitchingController{
 
     public void PrintBillDetails() throws IOException, ClassNotFoundException {
         Customer customer = Customer.read_customer(Utilities.CurrentUserID);
-        double monthlyRead = Double.parseDouble(MonthlyRead.getText());
         assert customer != null;
-        if (customer.getRealConsumption()-monthlyRead <50 ) {
+        if (customer.getRealConsumption() == 0) {
+            error.setVisible(true);
+            return;
+        }
+        error.setVisible(false);
+        double monthlyRead;
+        int lastMonth;
+        try {
+            monthlyRead = Double.parseDouble(MonthlyRead.getText());
+            lastMonth = Integer.parseInt(LastMonth.getText());
+            errorm.setVisible(false);
+        } catch (Exception e) {
+            errorm.setVisible(true);
+            return;
+        }
+
+        if (customer.getRealConsumption() - monthlyRead < 50) {
             customer_name_2.setText(customer.username);
             government_2.setText(customer.getRegion());
             address_2.setText(customer.getAddress());
             real_comsuption_p.setText(customer.getRealConsumption() + "");
             double monthlyReading = monthlyRead;
-            int lastMonth = Integer.parseInt(LastMonth.getText());
-            if (lastMonth - customer.getLastMonth() > 3)
-                Utilities.sendEmail(customer,"Warning\n you Haven't paid a bill for the last three months");
-            double charges = monthlyReading * chargeConstant;
-            charges += Utilities.tarrif*charges;
+            if (lastMonth - customer.getLastMonth() > 3 && customer.getLastMonth() != 0)
+                Utilities.sendEmail(customer, "Warning\n you Haven't paid a bill for the last three months");
+            double charges = Utilities.calculateCharge(monthlyReading);
             charges_p.setText(charges + "");
             pay.setVisible(true);
             customer.setAmount(monthlyRead);
@@ -101,14 +118,15 @@ public class customerProfileController extends SwitchingController{
         } else
             pay.setVisible(false);
     }
-    public void Pay() throws IOException, ClassNotFoundException {
+    public void Pay(ActionEvent event) throws IOException, ClassNotFoundException {
         Customer customer = Customer.read_customer(Utilities.CurrentUserID);
         double monthlyRead = Double.parseDouble(MonthlyRead.getText());
-        double charges = monthlyRead * chargeConstant;
+        double charges = monthlyRead * Utilities.chargeConstant;
         charges += Utilities.tarrif*charges;
         assert customer != null;
         Utilities.write(new billsData(Utilities.getNumberOfObjects(Utilities.BillsFilename),customer.getUsername(),customer.getAddress(),
                 charges,monthlyRead),Utilities.BillsFilename);
+        switchToCustomerProfile(event);
     }
 
 }

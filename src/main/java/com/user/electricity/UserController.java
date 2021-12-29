@@ -36,9 +36,16 @@ public class UserController extends SwitchingController {
     @FXML
     private Label wrongCombination;
     @FXML
-    private void initializeG(){
-        government.setItems(governments);
+    private Label errorm;
+    @FXML
+
+    private void initialize(){
+        try {
+            errorm.setVisible(false);
+            government.setItems(governments);
+        }catch (Exception ignored){}
     }
+
     public void uploadChooser(ActionEvent event){
         FileChooser fc = new FileChooser();
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif","*.jpeg"));
@@ -49,20 +56,29 @@ public class UserController extends SwitchingController {
     }
     // Sign UP
     public void signup(ActionEvent event) throws IOException {
-        String region = government.getSelectionModel().getSelectedItem();
-        Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),region,path.getText());
-        customer.setMeterCode(region.charAt(0)+ String.valueOf(Utilities.UserCount));
-        Utilities.write(customer,Utilities.CustomersFilename);
-        switchToLogin(event);
-        Utilities.sendEmail(customer,"Signup Confirmation your username is "+ customer.username + " Your Meter code is " + customer.getMeterCode());
+        try {
+            String region = government.getSelectionModel().getSelectedItem();
+            Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),region,path.getText());
+            customer.setMeterCode(region.charAt(0)+ String.valueOf(Utilities.UserCount));
+            Utilities.write(customer,Utilities.CustomersFilename);
+            switchToLogin(event);
+            Utilities.sendEmail(customer,"Signup Confirmation your username is "+ customer.username + " Your Meter code is " + customer.getMeterCode());
+        }catch (Exception e ){
+            errorm.setVisible(true);
+        }
+
     }
     public void add(ActionEvent event) throws IOException {
-        String region = government.getSelectionModel().getSelectedItem();
-        Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),region,path.getText());
-        customer.setMeterCode(region.charAt(0)+ String.valueOf(Utilities.UserCount));
-        Utilities.write(customer,Utilities.CustomersFilename);
-        switchToRegions(event);
-        Utilities.sendEmail(customer,"Signup Confirmation your username is "+ customer.username + " Your Meter code is " + customer.getMeterCode());
+        try {
+            String region = government.getSelectionModel().getSelectedItem();
+            Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),region,path.getText());
+            customer.setMeterCode(region.charAt(0)+ String.valueOf(Utilities.UserCount));
+            Utilities.write(customer,Utilities.CustomersFilename);
+            switchToRegions(event);
+            Utilities.sendEmail(customer,"Signup Confirmation your username is "+ customer.username + " Your Meter code is " + customer.getMeterCode());
+        }catch (Exception e ){
+            errorm.setVisible(true);
+        }
     }
 
     // Login and Validation
