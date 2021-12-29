@@ -93,8 +93,8 @@ public class Customer extends Person {
         File file = new File(Utilities.CustomersFilename);
         file.createNewFile();
         customers.removeIf(c -> c.getMeterCode().equals(meterCode));
-        for (int i = 0; i < customers.size(); i++) {
-            Files.write(Paths.get(Utilities.CustomersFilename), (customers.get(i).toString()+ System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
+        for (Customer customer : customers) {
+            Files.write(Paths.get(Utilities.CustomersFilename), (customer.toString() + System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
         }
     }
     public static void update_customer(Customer customer) throws IOException, ClassNotFoundException {
@@ -110,8 +110,8 @@ public class Customer extends Person {
                 customers.add(customer);
             }
         }
-        for (int i = 0; i < customers.size(); i++) {
-            Files.write(Paths.get(Utilities.CustomersFilename), (customers.get(i).toString()+ System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
+        for (Customer value : customers) {
+            Files.write(Paths.get(Utilities.CustomersFilename), (value.toString() + System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
         }
     }
     public String getRegion() {

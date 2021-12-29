@@ -1,2 +1,2 @@
-0|w|w|Giza|2
-1|f|f|Giza|NULL
+0|zaher|16 gamma st|Giza|complaint 
+1|Ibrahim|26 baker st|Cairo|another complaint

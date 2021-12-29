@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileHandler {
-    private static File file = new File(Utilities.CustomersFilename);
 
     public static void write(Object object, String filename ) throws IOException {
         try {
@@ -21,6 +20,7 @@ public class FileHandler {
         }
     }
     public static ArrayList<Customer> read_customers() throws IOException, ClassNotFoundException {
+        File file = new File(Utilities.CustomersFilename);
         Scanner scanner = new Scanner(file);
         ArrayList<Customer> customers = new ArrayList<Customer>();
         while (scanner.hasNextLine()){
