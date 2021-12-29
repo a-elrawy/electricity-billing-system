@@ -8,6 +8,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class customerProfileController extends SwitchingController{
 
@@ -75,10 +76,14 @@ public class customerProfileController extends SwitchingController{
     }
     public void sendComplaint(ActionEvent event) throws IOException, ClassNotFoundException {
         Customer customer = Customer.read_customer(Utilities.CurrentUserID);
-        String complaintText = comText.getText();
+        String complaintText;
+        if(!Objects.equals(comText.getText(), ""))
+            complaintText=comText.getText();
+       else
+            complaintText = "NULL";
         assert customer != null;
         Complaint complaint = new Complaint(customer.username,customer.getAddress(),customer.getRegion(),complaintText);
-        Utilities.write(complaint,Utilities.ComplaintsFilename);
+        FileHandler.write(complaint,Utilities.ComplaintsFilename);
         switchToCustomerProfile(event);
     }
 
@@ -124,7 +129,7 @@ public class customerProfileController extends SwitchingController{
         double charges = monthlyRead * Utilities.chargeConstant;
         charges += Utilities.tarrif*charges;
         assert customer != null;
-        Utilities.write(new billsData(Utilities.getNumberOfObjects(Utilities.BillsFilename),customer.getUsername(),customer.getAddress(),
+        FileHandler.write(new billsData(FileHandler.getNumberOfObjects(Utilities.BillsFilename),customer.getUsername(),customer.getAddress(),
                 charges,monthlyRead),Utilities.BillsFilename);
         switchToCustomerProfile(event);
     }

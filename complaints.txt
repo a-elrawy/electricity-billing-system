@@ -1,0 +1,2 @@
+0|w|w|Giza|2
+1|f|f|Giza|NULL

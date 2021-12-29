@@ -92,11 +92,11 @@ public class regionController extends SwitchingController implements Initializab
         try {
             String[] regions = {"Cairo", "Giza", "Alex"};
             ObservableList<billsData> list;
-            for (int i = 0; i < regions.length; i++) {
+            for (String region : regions) {
                 list = FXCollections.observableArrayList();
-                ArrayList<Customer> customers = Customer.getCustomersByRegion(regions[i]);
-                for(Customer c : customers){
-                    list.add(new billsData(c.getId(),c.getUsername(),c.getAddress(),c.getAmount(),c.getRealConsumption()));
+                ArrayList<Customer> customers = Customer.getCustomersByRegion(region);
+                for (Customer c : customers) {
+                    list.add(new billsData(c.getId(), c.getUsername(), c.getAddress(), c.getAmount(), c.getRealConsumption()));
                 }
                 lists.add(list);
             }

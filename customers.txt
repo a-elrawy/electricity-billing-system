@@ -1,6 +1,7 @@
 3|f|f|f|f|Alex|A3|f|0.0|0.0|0
 5|andfj|majorabdo12@gmail.com|as|as|Giza|G5|a|0.0|0.0|0
-6|w|majorabdo12@gmail.com|w|w|Giza|G6|w|0.0|0.0|0
 9|f|majorabdo12@gmail.com|f|f|Cairo|C9|f|0.0|0.0|0
 2|a|a|jfdsio|a|Giza|G2|fds|300.0|300.0|9
 7|g|majorabdo12@gmail.com|g|g|Giza|G7|g|300.0|200.0|30
+12|f|f|f|f|Giza|G12|f|0.0|0.0|0
+6|wre|majorabdo12@gmail.com|w|wwre|Giza|G6|w|0.0|0.0|0

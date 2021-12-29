@@ -42,19 +42,7 @@ public class Person {
         return password;
     }
 
-    public static ArrayList<Person> read_people(String filename) throws IOException, ClassNotFoundException {
-        File file = new File(filename);
-        Scanner scanner = new Scanner(file);
-        ArrayList<Person> people = new ArrayList<Person>();
-        while (scanner.hasNextLine()){
-            String line = scanner.nextLine();
-            String[] items = line.split("\\|");
-            int id = Integer.parseInt(items[0]);
-            Person person = new Person(id,items[1],items[2],items[3]);
-            people.add(person);
-        }
-        return people;
-    }
+
 
     public int getId() {
         return id;

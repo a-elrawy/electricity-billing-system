@@ -60,7 +60,7 @@ public class UserController extends SwitchingController {
             String region = government.getSelectionModel().getSelectedItem();
             Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),region,path.getText());
             customer.setMeterCode(region.charAt(0)+ String.valueOf(Utilities.UserCount));
-            Utilities.write(customer,Utilities.CustomersFilename);
+            FileHandler.write(customer,Utilities.CustomersFilename);
             switchToLogin(event);
             Utilities.sendEmail(customer,"Signup Confirmation your username is "+ customer.username + " Your Meter code is " + customer.getMeterCode());
         }catch (Exception e ){
@@ -73,7 +73,7 @@ public class UserController extends SwitchingController {
             String region = government.getSelectionModel().getSelectedItem();
             Customer  customer= new Customer(username.getText(),email.getText(),password.getText(),address.getText(),region,path.getText());
             customer.setMeterCode(region.charAt(0)+ String.valueOf(Utilities.UserCount));
-            Utilities.write(customer,Utilities.CustomersFilename);
+            FileHandler.write(customer,Utilities.CustomersFilename);
             switchToRegions(event);
             Utilities.sendEmail(customer,"Signup Confirmation your username is "+ customer.username + " Your Meter code is " + customer.getMeterCode());
         }catch (Exception e ){

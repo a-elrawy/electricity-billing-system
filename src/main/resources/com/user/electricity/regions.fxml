@@ -39,9 +39,9 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#switchToComplaints" prefHeight="50.0" prefWidth="199.0" style="-fx-background-color: #000;" text="Complaints" textFill="#fffefe">
+                  <Button mnemonicParsing="false" onAction="#switchToComplaints" prefHeight="56.0" prefWidth="216.0" style="-fx-background-color: #000;" text="Complaints" textFill="#fffefe">
                      <font>
-                        <Font name="Berlin Sans FB" size="36.0" />
+                        <Font size="25.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />

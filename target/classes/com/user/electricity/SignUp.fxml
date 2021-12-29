@@ -19,7 +19,7 @@
         </ImageView>
         <TextField fx:id="username" layoutX="364.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" onKeyTyped="#initialize" onMouseClicked="#initialize" prefHeight="24.0" prefWidth="216.0" />
         <Label layoutX="352.0" layoutY="65.0" text="Username" />
-        <Button fx:id="sumbit" layoutX="394.0" layoutY="434.0" mnemonicParsing="false" onAction="#signup" prefHeight="26.0" prefWidth="134.0" text="Submit" />
+        <Button fx:id="sumbit" layoutX="394.0" layoutY="437.0" mnemonicParsing="false" onAction="#signup" prefHeight="26.0" prefWidth="134.0" text="Submit" />
         <ImageView fitHeight="535.0" fitWidth="341.0" layoutX="-14.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@img/558201-electricity-picture-hd.jpg" />
@@ -57,6 +57,6 @@
          </font>
       </Button>
       <Button fx:id="sumbitAdmin" layoutX="404.0" layoutY="444.0" mnemonicParsing="false" onAction="#add" prefHeight="26.0" prefWidth="134.0" text="Submit" />
-      <Label fx:id="errorm" layoutX="362.0" layoutY="412.0" text="Please Enter All the Fields" textFill="RED" />
+      <Label fx:id="errorm" layoutX="362.0" layoutY="417.0" text="Please Enter All the Fields" textFill="RED" />
     </children>
 </AnchorPane>

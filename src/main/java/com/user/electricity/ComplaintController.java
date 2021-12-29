@@ -82,9 +82,9 @@ public class ComplaintController extends SwitchingController {
         try {
             String[] regions = {"Cairo", "Giza", "Alex"};
             ObservableList<Complaint> list;
-            for (int i = 0; i < regions.length; i++) {
+            for (String region : regions) {
                 list = FXCollections.observableArrayList();
-                ArrayList<Complaint> complaints = Complaint.getComplaintsByRegion(regions[i]);
+                ArrayList<Complaint> complaints = Complaint.getComplaintsByRegion(region);
                 list.addAll(complaints);
                 lists.add(list);
             }

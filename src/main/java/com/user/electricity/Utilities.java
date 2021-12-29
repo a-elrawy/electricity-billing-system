@@ -29,30 +29,7 @@ public class Utilities {
         return  region.charAt(0)+ String.valueOf(UserCount);
     }
 
-    public static void write(Object object, String filename ) throws IOException {
-        try {
-            Files.write(Paths.get(filename), (object.toString()+ System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
-        }catch (Exception e){
-            File file = new File(filename);
-            file.createNewFile();
-            Files.write(Paths.get(filename), (object.toString()+ System.lineSeparator()).getBytes(), StandardOpenOption.APPEND);
-        }
-    }
-    public static int getNumberOfObjects(String filename){
-        File file = new File(filename);
-        int count = 0;
-        try {
-            Scanner sc = new Scanner(file);
-            while(sc.hasNextLine()) {
-                sc.nextLine();
-                count++;
-            }
-            sc.close();
-        } catch (Exception e) {
-            e.getStackTrace();
-        }
-        return count;
-    }
+    // for ID
     public static void readNumbers(String filename) throws IOException {
         try {
             Scanner scanner = new Scanner(new File(filename));
@@ -71,7 +48,7 @@ public class Utilities {
     }
     public static boolean validate_login (Person person, String filename) throws IOException, ClassNotFoundException {
         boolean login = false;
-        ArrayList<Person> people = Person.read_people(filename);
+        ArrayList<Person> people = FileHandler.read_people(filename);
         for (Person c:  people) {
             if (c.getUsername().equals(person.getUsername()) && c.getPassword().equals(person.getPassword())) {
                 login = true;

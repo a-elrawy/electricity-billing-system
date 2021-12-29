@@ -41,7 +41,7 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="199.0" style="-fx-background-color: #000;" text="Complaints" textFill="#fffefe">
                      <font>
-                        <Font size="32.0" />
+                        <Font size="26.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />

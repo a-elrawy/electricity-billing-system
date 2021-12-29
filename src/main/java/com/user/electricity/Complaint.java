@@ -14,7 +14,7 @@ public class Complaint {
     String complaint;
 
     public Complaint(String customerName, String address, String region, String complaint) {
-        this.number = Utilities.getNumberOfObjects(Utilities.ComplaintsFilename);
+        this.number = FileHandler.getNumberOfObjects(Utilities.ComplaintsFilename);
         this.customerName = customerName;
         this.address = address;
         this.region = region;
@@ -61,20 +61,9 @@ public class Complaint {
     public void setComplaint(String complaint) {
         this.complaint = complaint;
     }
-    public static ArrayList<Complaint> read_complaints() throws IOException {
-        Scanner scanner = new Scanner(new File(Utilities.ComplaintsFilename));
-        ArrayList<Complaint> complaints = new ArrayList<Complaint>();
-        while (scanner.hasNextLine()){
-            String line = scanner.nextLine();
-            String[] items = line.split("\\|");
-            int id = Integer.parseInt(items[0]);
-            Complaint complaint = new Complaint(id,items[1],items[2],items[3],items[4]);
-            complaints.add(complaint);
-        }
-        return complaints;
-    }
+
     public static ArrayList<Complaint> getComplaintsByRegion(String region) throws IOException {
-        ArrayList<Complaint> complaints =  Complaint.read_complaints();
+        ArrayList<Complaint> complaints =  FileHandler.read_complaints();
         ArrayList<Complaint> complaints1 =  new ArrayList<>();
         for (Complaint c : complaints)
             if (Objects.equals(c.getRegion(), region))

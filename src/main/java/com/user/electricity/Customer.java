@@ -63,21 +63,9 @@ public class Customer extends Person {
         return "" + id +"|"+ username + "|" + email+ "|"+ password+ "|" + address+ "|" + region + "|" +  meterCode+ "|" + pathToContract + "|" + amount+"|" + realConsumption+"|"+lastMonth;
     }
 
-    // To ve Generalized
-    public static ArrayList<Customer> read_customers() throws IOException, ClassNotFoundException {
-        Scanner scanner = new Scanner(file);
-        ArrayList<Customer> customers = new ArrayList<Customer>();
-        while (scanner.hasNextLine()){
-            String line = scanner.nextLine();
-            String[] items = line.split("\\|");
-            int id = Integer.parseInt(items[0]);
-            Customer customer = new Customer(id,items[1],items[2],items[3],items[4],items[5],items[6],items[7],Double.parseDouble(items[8]),Double.parseDouble(items[9]),Integer.parseInt(items[10]));
-            customers.add(customer);
-        }
-        return customers;
-    }
+
     public static Customer read_customer(String meterCode) throws IOException, ClassNotFoundException {
-        ArrayList<Customer> customers =  Customer.read_customers();
+        ArrayList<Customer> customers =  FileHandler.read_customers();
         for(Customer c:customers){
             if(c.getMeterCode().equals(meterCode))
                 return c;
@@ -85,7 +73,7 @@ public class Customer extends Person {
         return null;
     }
     public static Customer read_customer(int userID) throws IOException, ClassNotFoundException {
-        ArrayList<Customer> customers =  Customer.read_customers();
+        ArrayList<Customer> customers =  FileHandler.read_customers();
         for(Customer c:customers){
             if(c.getId() == userID)
                 return c;
@@ -94,13 +82,13 @@ public class Customer extends Person {
     }
 
     public static void printAllCustomers() throws IOException, ClassNotFoundException {
-        ArrayList<Customer> customers =  Customer.read_customers();
+        ArrayList<Customer> customers =  FileHandler.read_customers();
         for(Customer c:customers){
             System.out.println(c.toString());
         }
     }
     public static void remove_customer(String meterCode) throws IOException, ClassNotFoundException {
-        ArrayList<Customer> customers =  Customer.read_customers();
+        ArrayList<Customer> customers =  FileHandler.read_customers();
         file.delete();
         File file = new File(Utilities.CustomersFilename);
         file.createNewFile();
@@ -110,7 +98,7 @@ public class Customer extends Person {
         }
     }
     public static void update_customer(Customer customer) throws IOException, ClassNotFoundException {
-        ArrayList<Customer> customers =  Customer.read_customers();
+        ArrayList<Customer> customers =  FileHandler.read_customers();
         file.delete();
         File file = new File(Utilities.CustomersFilename);
         file.createNewFile();
@@ -130,7 +118,7 @@ public class Customer extends Person {
         return region;
     }
     public static ArrayList<Customer> getCustomersByRegion(String region) throws IOException, ClassNotFoundException {
-        ArrayList<Customer> customers =  Customer.read_customers();
+        ArrayList<Customer> customers =  FileHandler.read_customers();
         ArrayList<Customer> customers2 =  new ArrayList<>();
         for (Customer c : customers)
             if (Objects.equals(c.getRegion(), region))
