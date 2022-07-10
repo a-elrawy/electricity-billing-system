@@ -138,7 +138,7 @@
                               <TableColumn prefWidth="75.0" text="Address" />
                               <TableColumn prefWidth="75.0" text="Phone" />
                               <TableColumn prefWidth="75.0" text="Value" />
-                              <TableColumn prefWidth="75.0" text="Comsupmtion" />
+                              <TableColumn prefWidth="75.0" text="Complaint" />
                            </columns>
                         </TableView>
                         <TableView fx:id="table4" prefHeight="477.0" prefWidth="550.0">
@@ -146,7 +146,7 @@
                               <TableColumn fx:id="ComplaintNo3" prefWidth="75.0" text="No." />
                               <TableColumn fx:id="name3" prefWidth="124.800048828125" text="Name" />
                               <TableColumn fx:id="address3" prefWidth="150.39996337890625" text="Address" />
-                              <TableColumn fx:id="com3" prefWidth="101.59991455078125" text="Consumption" />
+                              <TableColumn fx:id="com3" prefWidth="101.59991455078125" text="Complaint" />
                            </columns>
                         </TableView>
                      </children>

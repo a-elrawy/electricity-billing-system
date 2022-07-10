@@ -1,1 +1,2 @@
 com.user.electricity.billsData@36e8fb9c
+1|m|12|1254.0|200.0

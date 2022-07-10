@@ -50,7 +50,7 @@
                   </Button>
                     </children>
                 </VBox>
-                <Label alignment="CENTER" layoutX="86.0" layoutY="495.0" prefHeight="47.0" prefWidth="105.0" text="Logout" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="8.199999999999974" AnchorPane.leftAnchor="86.0" AnchorPane.rightAnchor="6.799999999999983" AnchorPane.topAnchor="495.00000000000006">
+                <Label alignment="CENTER" layoutX="86.0" layoutY="495.0" prefHeight="47.0" prefWidth="105.0" text="Logout" textFill="WHITE" underline="true" onMouseClicked="#switchTo" AnchorPane.bottomAnchor="8.199999999999974" AnchorPane.leftAnchor="86.0" AnchorPane.rightAnchor="6.799999999999983" AnchorPane.topAnchor="495.00000000000006">
                     <font>
                         <Font name="Berlin Sans FB" size="23.0" />
                     </font>
